@@ -1,0 +1,2 @@
+﻿Sửa lỗi chọn tháng Nhuận rồi chọn tháng khác
+Chọn lại năm âm lịch khác với số ngày trong tháng ít hơn
