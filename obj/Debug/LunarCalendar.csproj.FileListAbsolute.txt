@@ -1,0 +1,14 @@
+C:\Users\nguye\source\repos\LunarCalendar\bin\Debug\LunarCalendar.exe.config
+C:\Users\nguye\source\repos\LunarCalendar\bin\Debug\LunarCalendar.exe
+C:\Users\nguye\source\repos\LunarCalendar\bin\Debug\LunarCalendar.pdb
+C:\Users\nguye\source\repos\LunarCalendar\obj\Debug\LunarCalendar.csproj.AssemblyReference.cache
+C:\Users\nguye\source\repos\LunarCalendar\obj\Debug\LunarCalendar.csproj.SuggestedBindingRedirects.cache
+C:\Users\nguye\source\repos\LunarCalendar\obj\Debug\LunarCalendar.DateEntry.resources
+C:\Users\nguye\source\repos\LunarCalendar\obj\Debug\LunarCalendar.Main.resources
+C:\Users\nguye\source\repos\LunarCalendar\obj\Debug\LunarCalendar.LunarDayCalendar.resources
+C:\Users\nguye\source\repos\LunarCalendar\obj\Debug\LunarCalendar.LunarMonthCalendar.resources
+C:\Users\nguye\source\repos\LunarCalendar\obj\Debug\LunarCalendar.Properties.Resources.resources
+C:\Users\nguye\source\repos\LunarCalendar\obj\Debug\LunarCalendar.csproj.GenerateResource.cache
+C:\Users\nguye\source\repos\LunarCalendar\obj\Debug\LunarCalendar.csproj.CoreCompileInputs.cache
+C:\Users\nguye\source\repos\LunarCalendar\obj\Debug\LunarCalendar.exe
+C:\Users\nguye\source\repos\LunarCalendar\obj\Debug\LunarCalendar.pdb
