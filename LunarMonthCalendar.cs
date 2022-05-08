@@ -106,7 +106,23 @@ namespace LunarCalendar
                 for (int i = 0; i < 6; i++)
                     for (int j = 0; j < 7; j++)
                     {
-                        DateEntry currentDateEntry = (DateEntry)tlpLunarMonthCalendar.GetControlFromPosition(j, i);
+                        DateEntry currentDateEntry = null;
+
+                        foreach (Control control in Controls)
+                        {
+                            if (control.GetType() != typeof(DateEntry))
+                                continue;
+
+                            DateEntry dateEntry = (DateEntry)control;
+                            if (dateEntry.Name.Substring(2, 1) == (i + 1).ToString() && dateEntry.Name.Substring(3, 1) == (j + 1).ToString())
+                            {
+                                currentDateEntry = dateEntry;
+                                break;
+                            }
+                        }
+
+
+                        //DateEntry currentDateEntry = de11; //(DateEntry)tlpLunarMonthCalendar.GetControlFromPosition(j, i);
                         if (currentDateEntry != null)
                             currentDateEntry.Visible = true;
 
@@ -118,7 +134,7 @@ namespace LunarCalendar
 
                         else if (selectedMonth.Year == 9999 && selectedMonth.Month == 12 && k > startColumn + 30)   //MaxValue
                         {
-                            tlpLunarMonthCalendar.GetControlFromPosition(j, i).Visible = false;
+                            currentDateEntry.Visible = false;
                             k++;
                         }
 
@@ -192,6 +208,11 @@ namespace LunarCalendar
         public LunarMonthCalendar()
         {
             InitializeComponent();
+
+            SetStyle(ControlStyles.AllPaintingInWmPaint, true);
+            SetStyle(ControlStyles.DoubleBuffer, true);
+            SetStyle(ControlStyles.SupportsTransparentBackColor, true);
+            SetStyle(ControlStyles.UserPaint, true);
 
             selectedMonth = DateTime.Today;
         }

@@ -27,6 +27,11 @@ namespace LunarCalendar
         {
             InitializeComponent();
 
+            SetStyle(ControlStyles.AllPaintingInWmPaint, true);
+            SetStyle(ControlStyles.DoubleBuffer, true);
+            SetStyle(ControlStyles.SupportsTransparentBackColor, true);
+            SetStyle(ControlStyles.UserPaint, true);
+
             currentSolarDate = new SolarDate(DateTime.Today);
             currentLunarDate = currentSolarDate.ToLunarDate(timeZone);
             currentMonth = DateTime.Today.Month;
