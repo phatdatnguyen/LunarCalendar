@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace LunarCalendar
+﻿namespace LunarCalendar
 {
     public static class CalendarConversion
     {
@@ -17,18 +11,18 @@ namespace LunarCalendar
             double T3 = T2 * T;
             double dr = Math.PI / 180;
             double Jd1 = 2415020.75933 + 29.53058868 * k + 0.0001178 * T2 - 0.000000155 * T3;
-            Jd1 = Jd1 + 0.00033 * Math.Sin((166.56 + 132.87 * T - 0.009173 * T2) * dr); // Mean new moon
+            Jd1 += 0.00033 * Math.Sin((166.56 + 132.87 * T - 0.009173 * T2) * dr); // Mean new moon
             double M = 359.2242 + 29.10535608 * k - 0.0000333 * T2 - 0.00000347 * T3; // Sun's mean anomaly
             double Mpr = 306.0253 + 385.81691806 * k + 0.0107306 * T2 + 0.00001236 * T3; // Moon's mean anomaly
             double F = 21.2964 + 390.67050646 * k - 0.0016528 * T2 - 0.00000239 * T3; // Moon's argument of latitude
             double C1 = (0.1734 - 0.000393 * T) * Math.Sin(M * dr) + 0.0021 * Math.Sin(2 * dr * M);
             C1 = C1 - 0.4068 * Math.Sin(Mpr * dr) + 0.0161 * Math.Sin(dr * 2 * Mpr);
-            C1 = C1 - 0.0004 * Math.Sin(dr * 3 * Mpr);
+            C1 -= 0.0004 * Math.Sin(dr * 3 * Mpr);
             C1 = C1 + 0.0104 * Math.Sin(dr * 2 * F) - 0.0051 * Math.Sin(dr * (M + Mpr));
             C1 = C1 - 0.0074 * Math.Sin(dr * (M - Mpr)) + 0.0004 * Math.Sin(dr * (2 * F + M));
             C1 = C1 - 0.0004 * Math.Sin(dr * (2 * F - M)) - 0.0006 * Math.Sin(dr * (2 * F + Mpr));
             C1 = C1 + 0.0010 * Math.Sin(dr * (2 * F - Mpr)) + 0.0005 * Math.Sin(dr * (2 * Mpr + M));
-            double dt = 0;
+            double dt;
             if (T < -11)
                 dt = 0.001 + 0.000839 * T + 0.0002261 * T2 - 0.00000845 * T3 - 0.000000081 * T * T3;
             else
@@ -54,8 +48,8 @@ namespace LunarCalendar
             double dL = (1.9146 - 0.004817 * T - 0.000014 * T2) * Math.Sin(dr * M);
             dL = dL + (0.019993 - 0.000101 * T) * Math.Sin(dr * 2 * M) + 0.00029 * Math.Sin(dr * 3 * M);
             double L = L0 + dL; // true longitude, degree
-            L = L * dr;
-            L = L - Math.PI * 2 * (Math.Floor(L / (Math.PI * 2))); // Normalize to (0, 2*PI)
+            L *= dr;
+            L -= Math.PI * 2 * (Math.Floor(L / (Math.PI * 2))); // Normalize to (0, 2*PI)
             return L;
         }
 
@@ -68,7 +62,7 @@ namespace LunarCalendar
         //Nếu tháng bắt đầu vào ngày đó không chứa Đông chí thì ta phải lùi lại 1 tháng nữa.
         private static long GetLunarMonth11(int year, int timeZone)
         {
-            SolarDate solarDate = new SolarDate(31, 12, year);
+            SolarDate solarDate = new(31, 12, year);
             double off = solarDate.JulianDayNumber - 2415021.076998695;
             long k = (long)Math.Floor(off / 29.530588853);
             long nm = GetNewMoonDay(k, timeZone);
@@ -85,7 +79,7 @@ namespace LunarCalendar
         private static int GetLeapMonthOffset(double a11, int timeZone)
         {
             long k = (long)Math.Floor((a11 - 2415021.076998695) / 29.530588853 + 0.5);
-            long last = 0;
+            long last;
             int i = 1; // We start with the month following lunar month 11
             long arc = GetSunLongitude(GetNewMoonDay(k + i, timeZone), timeZone);
             do
@@ -107,7 +101,7 @@ namespace LunarCalendar
                 monthStart = GetNewMoonDay(k, timeZone);
             long a11 = GetLunarMonth11(solarDate.Year, timeZone);
             long b11 = a11;
-            int lunarYear = 0;
+            int lunarYear;
             if (a11 >= monthStart)
             {
                 lunarYear = solarDate.Year;
@@ -133,7 +127,7 @@ namespace LunarCalendar
                 }
             }
             if (lunarMonth > 12)
-                lunarMonth = lunarMonth - 12;
+                lunarMonth -= 12;
             if (lunarMonth >= 11 && diff < 4)
                 lunarYear -= 1;
             return new LunarDate(lunarDay, lunarMonth, lunarLeap, lunarYear, timeZone);
@@ -147,8 +141,8 @@ namespace LunarCalendar
 
         public static long JulianDayNumberFromLunarDate(LunarDate LunarDate)
         {
-            long a11 = 0;
-            long b11 = 0;
+            long a11;
+            long b11;
             if (LunarDate.Month < 11)
             {
                 a11 = GetLunarMonth11(LunarDate.Year - 1, LunarDate.TimeZone);
@@ -163,7 +157,7 @@ namespace LunarCalendar
             int off = LunarDate.Month - 11;
             if (off < 0)
             {
-                off = off + 12;
+                off += 12;
             }
             if (b11 - a11 > 365)
             {
@@ -171,7 +165,7 @@ namespace LunarCalendar
                 int leapMonth = leapOff - 2;
                 if (leapMonth < 0)
                 {
-                    leapMonth = leapMonth + 12;
+                    leapMonth += 12;
                 }
                 if (LunarDate.IsLeapMonth && LunarDate.Month != leapMonth)
                 {
@@ -179,7 +173,7 @@ namespace LunarCalendar
                 }
                 if (LunarDate.IsLeapMonth || off >= leapOff)
                 {
-                    off = off + 1;
+                    off++;
                 }
             }
             long monthStart = GetNewMoonDay(k + off, LunarDate.TimeZone);

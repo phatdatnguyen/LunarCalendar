@@ -1,20 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections;
 
 namespace LunarCalendar
 {
     public class LunarDate
     {
         #region Fields
-        private int day;
-        private int month;
-        private bool isLeapMonth;
-        private int year;
-        private int timeZone;
+        private readonly int day;
+        private readonly int month;
+        private readonly bool isLeapMonth;
+        private readonly int year;
+        private readonly int timeZone;
         #endregion
 
         #region Properties
@@ -27,80 +22,34 @@ namespace LunarCalendar
             get
             {
                 SolarDate relatedSolarDate = ToSolarDate();
-                string CelestialStem = "";
-                switch (relatedSolarDate.JulianDayNumber % 10)
+                string CelestialStem = (relatedSolarDate.JulianDayNumber % 10) switch
                 {
-                    case 0:
-                        CelestialStem = "Quý";
-                        break;
-                    case 1:
-                        CelestialStem = "Giáp";
-                        break;
-                    case 2:
-                        CelestialStem = "Ất";
-                        break;
-                    case 3:
-                        CelestialStem = "Bính";
-                        break;
-                    case 4:
-                        CelestialStem = "Đinh";
-                        break;
-                    case 5:
-                        CelestialStem = "Mậu";
-                        break;
-                    case 6:
-                        CelestialStem = "Kỷ";
-                        break;
-                    case 7:
-                        CelestialStem = "Canh";
-                        break;
-                    case 8:
-                        CelestialStem = "Tân";
-                        break;
-                    default:
-                        CelestialStem = "Nhâm";
-                        break;
-                }
-                string EarthlyBranch = "";
-                switch (relatedSolarDate.JulianDayNumber % 12)
+                    0 => "Quý",
+                    1 => "Giáp",
+                    2 => "Ất",
+                    3 => "Bính",
+                    4 => "Đinh",
+                    5 => "Mậu",
+                    6 => "Kỷ",
+                    7 => "Canh",
+                    8 => "Tân",
+                    _ => "Nhâm",
+                };
+                string EarthlyBranch = (relatedSolarDate.JulianDayNumber % 12) switch
                 {
-                    case 0:
-                        EarthlyBranch = "Sửu";
-                        break;
-                    case 1:
-                        EarthlyBranch = "Dần";
-                        break;
-                    case 2:
-                        EarthlyBranch = "Mão";
-                        break;
-                    case 3:
-                        EarthlyBranch = "Thìn";
-                        break;
-                    case 4:
-                        EarthlyBranch = "Tỵ";
-                        break;
-                    case 5:
-                        EarthlyBranch = "Ngọ";
-                        break;
-                    case 6:
-                        EarthlyBranch = "Mùi";
-                        break;
-                    case 7:
-                        EarthlyBranch = "Thân";
-                        break;
-                    case 8:
-                        EarthlyBranch = "Dậu";
-                        break;
-                    case 9:
-                        EarthlyBranch = "Tuất";
-                        break;
-                    case 10:
-                        EarthlyBranch = "Hợi";
-                        break;
-                    default:
-                        EarthlyBranch = "Tý";
-                        break;
-                }
+                    0 => "Sửu",
+                    1 => "Dần",
+                    2 => "Mão",
+                    3 => "Thìn",
+                    4 => "Tỵ",
+                    5 => "Ngọ",
+                    6 => "Mùi",
+                    7 => "Thân",
+                    8 => "Dậu",
+                    9 => "Tuất",
+                    10 => "Hợi",
+                    _ => "Tý",
+                };
                 return CelestialStem + " " + EarthlyBranch;
             }
         }
@@ -112,80 +61,34 @@ namespace LunarCalendar
         {
             get
             {
-                string CelestialStem = "";
-                switch ((year * 12 + month + 3) % 10)
+                string CelestialStem = ((year * 12 + month + 3) % 10) switch
                 {
-                    case 0:
-                        CelestialStem = "Giáp";
-                        break;
-                    case 1:
-                        CelestialStem = "Ất";
-                        break;
-                    case 2:
-                        CelestialStem = "Bính";
-                        break;
-                    case 3:
-                        CelestialStem = "Đinh";
-                        break;
-                    case 4:
-                        CelestialStem = "Mậu";
-                        break;
-                    case 5:
-                        CelestialStem = "Kỷ";
-                        break;
-                    case 6:
-                        CelestialStem = "Canh";
-                        break;
-                    case 7:
-                        CelestialStem = "Tân";
-                        break;
-                    case 8:
-                        CelestialStem = "Nhâm";
-                        break;
-                    default:
-                        CelestialStem = "Quý";
-                        break;
-                }
-                string EarthlyBranch = "";
-                switch (month)
+                    0 => "Giáp",
+                    1 => "Ất",
+                    2 => "Bính",
+                    3 => "Đinh",
+                    4 => "Mậu",
+                    5 => "Kỷ",
+                    6 => "Canh",
+                    7 => "Tân",
+                    8 => "Nhâm",
+                    _ => "Quý",
+                };
+                string EarthlyBranch = month switch
                 {
-                    case 1:
-                        EarthlyBranch = "Dần";
-                        break;
-                    case 2:
-                        EarthlyBranch = "Mão";
-                        break;
-                    case 3:
-                        EarthlyBranch = "Thìn";
-                        break;
-                    case 4:
-                        EarthlyBranch = "Tỵ";
-                        break;
-                    case 5:
-                        EarthlyBranch = "Ngọ";
-                        break;
-                    case 6:
-                        EarthlyBranch = "Mùi";
-                        break;
-                    case 7:
-                        EarthlyBranch = "Thân";
-                        break;
-                    case 8:
-                        EarthlyBranch = "Dậu";
-                        break;
-                    case 9:
-                        EarthlyBranch = "Tuất";
-                        break;
-                    case 10:
-                        EarthlyBranch = "Hợi";
-                        break;
-                    case 11:
-                        EarthlyBranch = "Tý";
-                        break;
-                    default:
-                        EarthlyBranch = "Sửu";
-                        break;
-                }
+                    1 => "Dần",
+                    2 => "Mão",
+                    3 => "Thìn",
+                    4 => "Tỵ",
+                    5 => "Ngọ",
+                    6 => "Mùi",
+                    7 => "Thân",
+                    8 => "Dậu",
+                    9 => "Tuất",
+                    10 => "Hợi",
+                    11 => "Tý",
+                    _ => "Sửu",
+                };
                 return CelestialStem + " " + EarthlyBranch;
             }
         }
@@ -201,80 +104,34 @@ namespace LunarCalendar
         {
             get
             {
-                string CelestialStem = "";
-                switch (year % 10)
+                string CelestialStem = (year % 10) switch
                 {
-                    case 0:
-                        CelestialStem = "Canh";
-                        break;
-                    case 1:
-                        CelestialStem = "Tân";
-                        break;
-                    case 2:
-                        CelestialStem = "Nhâm";
-                        break;
-                    case 3:
-                        CelestialStem = "Quý";
-                        break;
-                    case 4:
-                        CelestialStem = "Giáp";
-                        break;
-                    case 5:
-                        CelestialStem = "Ất";
-                        break;
-                    case 6:
-                        CelestialStem = "Bính";
-                        break;
-                    case 7:
-                        CelestialStem = "Đinh";
-                        break;
-                    case 8:
-                        CelestialStem = "Mậu";
-                        break;
-                    default:
-                        CelestialStem = "Kỷ";
-                        break;
-                }
-                string EarthlyBranch = "";
-                switch (year % 12)
+                    0 => "Canh",
+                    1 => "Tân",
+                    2 => "Nhâm",
+                    3 => "Quý",
+                    4 => "Giáp",
+                    5 => "Ất",
+                    6 => "Bính",
+                    7 => "Đinh",
+                    8 => "Mậu",
+                    _ => "Kỷ",
+                };
+                string EarthlyBranch = (year % 12) switch
                 {
-                    case 0:
-                        EarthlyBranch = "Thân";
-                        break;
-                    case 1:
-                        EarthlyBranch = "Dậu";
-                        break;
-                    case 2:
-                        EarthlyBranch = "Tuất";
-                        break;
-                    case 3:
-                        EarthlyBranch = "Hợi";
-                        break;
-                    case 4:
-                        EarthlyBranch = "Tý";
-                        break;
-                    case 5:
-                        EarthlyBranch = "Sửu";
-                        break;
-                    case 6:
-                        EarthlyBranch = "Dần";
-                        break;
-                    case 7:
-                        EarthlyBranch = "Mão";
-                        break;
-                    case 8:
-                        EarthlyBranch = "Thìn";
-                        break;
-                    case 9:
-                        EarthlyBranch = "Tỵ";
-                        break;
-                    case 10:
-                        EarthlyBranch = "Ngọ";
-                        break;
-                    default:
-                        EarthlyBranch = "Mùi";
-                        break;
-                }
+                    0 => "Thân",
+                    1 => "Dậu",
+                    2 => "Tuất",
+                    3 => "Hợi",
+                    4 => "Tý",
+                    5 => "Sửu",
+                    6 => "Dần",
+                    7 => "Mão",
+                    8 => "Thìn",
+                    9 => "Tỵ",
+                    10 => "Ngọ",
+                    _ => "Mùi",
+                };
                 return CelestialStem + " " + EarthlyBranch;
             }
         }
@@ -305,10 +162,10 @@ namespace LunarCalendar
             return CalendarConversion.ConvertLunarDateToSolarDate(this);
         }
 
-        public static ArrayList GetMonths(int year, int timeZone)
+        public static List<string> GetMonths(int year, int timeZone)
         {
-            ArrayList months = new ArrayList();
-            LunarDate lunarDate1 = new LunarDate(1, 1, false, year, timeZone);
+            List<string> months = new();
+            LunarDate lunarDate1 = new(1, 1, false, year, timeZone);
 
             LunarDate newMoonDay = lunarDate1;
             SolarDate testDate_Solar;
@@ -323,10 +180,10 @@ namespace LunarCalendar
 
                 if (year == 9999 && month == "12")
                     break;
-                testDate_Solar = new SolarDate(newMoonDay.JulianDayNumber + 32);
+                testDate_Solar = new(newMoonDay.JulianDayNumber + 32);
                 testDate_Lunar = testDate_Solar.ToLunarDate(timeZone);
 
-                newMoonDay = new LunarDate(1, testDate_Lunar.Month, testDate_Lunar.isLeapMonth, year, timeZone);
+                newMoonDay = new(1, testDate_Lunar.Month, testDate_Lunar.isLeapMonth, year, timeZone);
             }
             while (testDate_Lunar.Year == year);
 
@@ -338,13 +195,13 @@ namespace LunarCalendar
             if (year == 9999 && month == 12)
                 return 29;
 
-            LunarDate newMoonDay_Lunar = new LunarDate(1, month, isLeapMonth, year, timeZone);
+            LunarDate newMoonDay_Lunar = new(1, month, isLeapMonth, year, timeZone);
             SolarDate newMoonDay_Solar = newMoonDay_Lunar.ToSolarDate();
 
-            SolarDate testDate_Solar = new SolarDate(newMoonDay_Solar.JulianDayNumber + 32);
+            SolarDate testDate_Solar = new(newMoonDay_Solar.JulianDayNumber + 32);
             LunarDate testDate_Lunar = testDate_Solar.ToLunarDate(timeZone);
 
-            LunarDate nextNewMoonDay_Lunar = new LunarDate(1, testDate_Lunar.Month, testDate_Lunar.isLeapMonth, testDate_Lunar.Year, timeZone);
+            LunarDate nextNewMoonDay_Lunar = new(1, testDate_Lunar.Month, testDate_Lunar.isLeapMonth, testDate_Lunar.Year, timeZone);
             SolarDate nextNewMoonDay_Solar = nextNewMoonDay_Lunar.ToSolarDate();
 
             return (int)(nextNewMoonDay_Solar.JulianDayNumber - newMoonDay_Solar.JulianDayNumber);

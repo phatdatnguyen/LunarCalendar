@@ -1,19 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Windows.Forms;
+﻿using System.ComponentModel;
 
 namespace LunarCalendar
 {
     public partial class Main : Form
     {
         #region Fields
-        private int timeZone = 7;
+        private readonly int timeZone = 7; // múi giờ Việt Nam
         //DayCalendar Tab
         private SolarDate currentSolarDate;
         private LunarDate currentLunarDate;
@@ -27,184 +19,179 @@ namespace LunarCalendar
         {
             InitializeComponent();
 
-            SetStyle(ControlStyles.AllPaintingInWmPaint, true);
-            SetStyle(ControlStyles.DoubleBuffer, true);
-            SetStyle(ControlStyles.SupportsTransparentBackColor, true);
-            SetStyle(ControlStyles.UserPaint, true);
-
             currentSolarDate = new SolarDate(DateTime.Today);
             currentLunarDate = currentSolarDate.ToLunarDate(timeZone);
             currentMonth = DateTime.Today.Month;
             currentYear = DateTime.Today.Year;
 
-            DayCalendar_FillValue();
-            MonthCalendar_FillValue();
+            DayCalendar_FillValues();
+            MonthCalendar_FillValues();
 
-            cldLunarDayCalendar.SelectedDate = DateTime.Today;
-            cldLunarMonthCalendar.SelectedMonth = DateTime.Today;
+            lunarDayCalendar.SelectedDate = DateTime.Today;
+            lunarMonthCalendar.SelectedMonth = DateTime.Today;
         }
         #endregion
 
         #region Methods
         //KeyPress
-        private void txtLunarCalendar_KeyPress(object sender, KeyPressEventArgs e)
+        private void KeyPressControl(object sender, KeyPressEventArgs e)
         {
             if (!(Char.IsNumber(e.KeyChar) || Char.IsControl(e.KeyChar)))
                 e.Handled = true;
         }
 
         //Tab DayCalendar
-        private void txtDayCalendar_Year_KeyDown(object sender, KeyEventArgs e)
+        private void TextBox_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
             {
-                btnDayCalendar_Today.Focus();
+                todayButton.Focus();
                 ((TextBox)sender).Focus();
             }
         }
 
-        private void DayCalendar_FillValue()
+        private void DayCalendar_FillValues()
         {
             //Solar Date
-                //Year
-            txtDayCalendar_Solar_Year.Text = currentSolarDate.Year.ToString("0000");
-                //Month
-            cmbDayCalendar_Solar_Month.Text = currentSolarDate.Month.ToString("00");
-                //Day
-            cmbDayCalendar_Solar_Day.Items.Clear();
+            //Year
+            solarYearTextBox.Text = currentSolarDate.Year.ToString("0000");
+            //Month
+            solarMonthComboBox.Text = currentSolarDate.Month.ToString("00");
+            //Day
+            solarDayComboBox.Items.Clear();
             int n = SolarDate.GetNumberOfDaysInMonth(currentSolarDate.Month, currentSolarDate.Year);
             for (int i = 1; i <= n; i++)
-                cmbDayCalendar_Solar_Day.Items.Add((i).ToString("00"));
-            cmbDayCalendar_Solar_Day.Text = currentSolarDate.Day.ToString("00");
+                solarDayComboBox.Items.Add((i).ToString("00"));
+            solarDayComboBox.Text = currentSolarDate.Day.ToString("00");
 
             //Lunar Date
-                //Year
-            txtDayCalendar_Lunar_Year.Text = currentLunarDate.Year.ToString("0000");
-                //Month
-            cmbDayCalendar_Lunar_Month.Items.Clear();
+            //Year
+            lunarYearTextBox.Text = currentLunarDate.Year.ToString("0000");
+            //Month
+            lunarMonthComboBox.Items.Clear();
             foreach (string month in LunarDate.GetMonths(currentLunarDate.Year, timeZone))
-                cmbDayCalendar_Lunar_Month.Items.Add(month);
+                lunarMonthComboBox.Items.Add(month);
             string str = currentLunarDate.Month.ToString("00");
             if (currentLunarDate.IsLeapMonth)
                 str += " nhuận";
-            cmbDayCalendar_Lunar_Month.Text = str;
-                //Day
-            cmbDayCalendar_Lunar_Day.Items.Clear();
+            lunarMonthComboBox.Text = str;
+            //Day
+            lunarDayComboBox.Items.Clear();
             int m = LunarDate.GetNumberOfDaysInMonth(currentLunarDate.Month, currentLunarDate.IsLeapMonth, currentLunarDate.Year, timeZone);
             for (int i = 1; i <= m; i++)
-                cmbDayCalendar_Lunar_Day.Items.Add(i.ToString("00"));
-            cmbDayCalendar_Lunar_Day.Text = currentLunarDate.Day.ToString("00");
+                lunarDayComboBox.Items.Add(i.ToString("00"));
+            lunarDayComboBox.Text = currentLunarDate.Day.ToString("00");
         }
-        
-        private void cldLunarDayCalendar_SelectedDateChanged(object sender, EventArgs e)
+
+        private void LunarDayCalendar_SelectedDateChanged(object sender, EventArgs e)
         {
-            currentSolarDate = new SolarDate(cldLunarDayCalendar.SelectedDate);
+            currentSolarDate = new SolarDate(lunarDayCalendar.SelectedDate);
             currentLunarDate = currentSolarDate.ToLunarDate(timeZone);
 
             DayCalendar_UpdateValue();
 
             if (currentSolarDate == SolarDate.MinValue)
-                btnDayCalendar_PreviousDate.Enabled = false;
+                previousDateButton.Enabled = false;
             else
-                btnDayCalendar_PreviousDate.Enabled = true;
+                previousDateButton.Enabled = true;
 
             if (currentSolarDate == SolarDate.MaxValue)
-                btnDayCalendar_NextDate.Enabled = false;
+                nextDateButton.Enabled = false;
             else
-                btnDayCalendar_NextDate.Enabled = true;
+                nextDateButton.Enabled = true;
         }
 
         private void DayCalendar_UpdateValue()
         {
             //Solar Date
-                //Year
-            txtDayCalendar_Solar_Year.Text = currentSolarDate.Year.ToString("0000");
-                //Month
-            cmbDayCalendar_Solar_Month.Text = currentSolarDate.Month.ToString("00");
-                //Day
-            cmbDayCalendar_Solar_Day.Items.Clear();
+            //Year
+            solarYearTextBox.Text = currentSolarDate.Year.ToString("0000");
+            //Month
+            solarMonthComboBox.Text = currentSolarDate.Month.ToString("00");
+            //Day
+            solarDayComboBox.Items.Clear();
             int n = SolarDate.GetNumberOfDaysInMonth(currentSolarDate.Month, currentSolarDate.Year);
             for (int i = 1; i <= n; i++)
-                cmbDayCalendar_Solar_Day.Items.Add(i.ToString("00"));
-            cmbDayCalendar_Solar_Day.Text = currentSolarDate.Day.ToString("00");
+                solarDayComboBox.Items.Add(i.ToString("00"));
+            solarDayComboBox.Text = currentSolarDate.Day.ToString("00");
 
             //Lunar Date
-                //Year
-            txtDayCalendar_Lunar_Year.Text = currentLunarDate.Year.ToString("0000");
-                //Month
+            //Year
+            lunarYearTextBox.Text = currentLunarDate.Year.ToString("0000");
+            //Month
             if (currentLunarDate.Year > 0)
-            {                
-                cmbDayCalendar_Lunar_Month.Items.Clear();
-                ArrayList months = months = LunarDate.GetMonths(currentLunarDate.Year, timeZone);
+            {
+                lunarMonthComboBox.Items.Clear();
+                List<string> months = LunarDate.GetMonths(currentLunarDate.Year, timeZone);
                 foreach (string month in months)
-                    cmbDayCalendar_Lunar_Month.Items.Add(month);
+                    lunarMonthComboBox.Items.Add(month);
                 string str = currentLunarDate.Month.ToString("00");
                 if (currentLunarDate.IsLeapMonth)
                     str += " nhuận";
-                cmbDayCalendar_Lunar_Month.Text = str;
+                lunarMonthComboBox.Text = str;
             }
             else if (currentLunarDate.Year == 0)
             {
-                cmbDayCalendar_Lunar_Month.Items.Clear();
-                cmbDayCalendar_Lunar_Month.Items.Add("11");
-                cmbDayCalendar_Lunar_Month.Items.Add("12");
-                cmbDayCalendar_Lunar_Month.Text = currentLunarDate.Month.ToString("00");
+                lunarMonthComboBox.Items.Clear();
+                lunarMonthComboBox.Items.Add("11");
+                lunarMonthComboBox.Items.Add("12");
+                lunarMonthComboBox.Text = currentLunarDate.Month.ToString("00");
             }
 
             //Day
             if (currentLunarDate.Year > 0 || (currentLunarDate.Year == 0 && currentLunarDate.Month > 11))
             {
-                cmbDayCalendar_Lunar_Day.Items.Clear();
+                lunarDayComboBox.Items.Clear();
                 int m = LunarDate.GetNumberOfDaysInMonth(currentLunarDate.Month, currentLunarDate.IsLeapMonth, currentLunarDate.Year, timeZone);
                 for (int i = 1; i <= m; i++)
-                    cmbDayCalendar_Lunar_Day.Items.Add((i).ToString("00"));
-                cmbDayCalendar_Lunar_Day.Text = currentLunarDate.Day.ToString("00");
+                    lunarDayComboBox.Items.Add((i).ToString("00"));
+                lunarDayComboBox.Text = currentLunarDate.Day.ToString("00");
             }
             else if (currentLunarDate.Year == 0 && currentLunarDate.Month == 11)
             {
-                cmbDayCalendar_Lunar_Day.Items.Clear();
+                lunarDayComboBox.Items.Clear();
                 for (int i = 19; i <= 30; i++)
-                    cmbDayCalendar_Lunar_Day.Items.Add(i.ToString());
-                cmbDayCalendar_Lunar_Day.Text = currentLunarDate.Day.ToString("00");
+                    lunarDayComboBox.Items.Add(i.ToString());
+                lunarDayComboBox.Text = currentLunarDate.Day.ToString("00");
             }
         }
 
-        private void txtDayCalendar_Solar_Year_Validating(object sender, CancelEventArgs e)
+        private void SolarYearTextBox_Validating(object sender, CancelEventArgs e)
         {
             //Kiểm tra giá trị năm
-            if (currentSolarDate.Year == int.Parse(txtDayCalendar_Solar_Year.Text))
+            if (currentSolarDate.Year == int.Parse(solarYearTextBox.Text))
                 return;
 
             try
             {
-                int year = int.Parse(txtDayCalendar_Solar_Year.Text);
+                int year = int.Parse(solarYearTextBox.Text);
                 if (year < 1 || year > 9999)
                     throw new Exception();
-                txtDayCalendar_Solar_Year.Text = year.ToString("0000");
+                solarYearTextBox.Text = year.ToString("0000");
             }
             catch
             {
                 MessageBox.Show("Nhập lại giá trị năm", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                txtDayCalendar_Solar_Year.SelectAll();
+                solarYearTextBox.SelectAll();
                 e.Cancel = true;
             }
         }
 
-        private void txtDayCalendar_Solar_Year_Validated(object sender, EventArgs e)
+        private void SolarYearTextBox_Validated(object sender, EventArgs e)
         {
-            int currentSolarYear = int.Parse(txtDayCalendar_Solar_Year.Text);
+            int currentSolarYear = int.Parse(solarYearTextBox.Text);
             DayCalendar_ModifySelectedDate_Solar(currentSolarDate.Month, currentSolarYear);
-            cldLunarDayCalendar.SelectedDate = new DateTime(currentSolarYear, currentSolarDate.Month, currentSolarDate.Day);
+            lunarDayCalendar.SelectedDate = new DateTime(currentSolarYear, currentSolarDate.Month, currentSolarDate.Day);
         }
 
-        private void cmbDayCalendar_Solar_Month_SelectedIndexChanged(object sender, EventArgs e)
+        private void SolarMonthComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cmbDayCalendar_Solar_Month.SelectedIndex == -1)
+            if (solarMonthComboBox.SelectedIndex == -1)
                 return;
 
-            int currentSolarMonth = int.Parse(cmbDayCalendar_Solar_Month.Text);
+            int currentSolarMonth = int.Parse(solarMonthComboBox.Text);
             DayCalendar_ModifySelectedDate_Solar(currentSolarMonth, currentSolarDate.Year);
-            cldLunarDayCalendar.SelectedDate = new DateTime(currentSolarDate.Year, currentSolarMonth, currentSolarDate.Day);
+            lunarDayCalendar.SelectedDate = new DateTime(currentSolarDate.Year, currentSolarMonth, currentSolarDate.Day);
         }
 
         private void DayCalendar_ModifySelectedDate_Solar(int solarMonth, int solarYear)
@@ -215,84 +202,84 @@ namespace LunarCalendar
                 currentSolarDate = new SolarDate(n, solarMonth, solarYear);
         }
 
-        private void cmbDayCalendar_Solar_Day_SelectedIndexChanged(object sender, EventArgs e)
+        private void SolarDayComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cmbDayCalendar_Solar_Day.SelectedIndex == -1)
+            if (solarDayComboBox.SelectedIndex == -1)
                 return;
 
-            int currentSolarDay = int.Parse(cmbDayCalendar_Solar_Day.Text);
-            cldLunarDayCalendar.SelectedDate = new DateTime(currentSolarDate.Year, currentSolarDate.Month, currentSolarDay);
+            int currentSolarDay = int.Parse(solarDayComboBox.Text);
+            lunarDayCalendar.SelectedDate = new DateTime(currentSolarDate.Year, currentSolarDate.Month, currentSolarDay);
         }
 
-        private void txtDayCalendar_Lunar_Year_Validating(object sender, CancelEventArgs e)
+        private void LunarYearTextBox_Validating(object sender, CancelEventArgs e)
         {
             //Kiểm tra giá trị năm
-            if (currentLunarDate.Year == int.Parse(txtDayCalendar_Lunar_Year.Text))
+            if (currentLunarDate.Year == int.Parse(lunarYearTextBox.Text))
                 return;
 
             try
             {
-                int year = int.Parse(txtDayCalendar_Lunar_Year.Text);
+                int year = int.Parse(lunarYearTextBox.Text);
                 if (year < 0 || year > 9999)
                     throw new Exception();
-                
-                txtDayCalendar_Lunar_Year.Text = year.ToString("0000");
+
+                lunarYearTextBox.Text = year.ToString("0000");
             }
             catch
             {
                 MessageBox.Show("Nhập lại giá trị năm", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                txtDayCalendar_Lunar_Year.SelectAll();
+                lunarYearTextBox.SelectAll();
                 e.Cancel = true;
             }
         }
 
-        private void txtDayCalendar_Lunar_Year_Validated(object sender, EventArgs e)
+        private void LunarYearTextBox_Validated(object sender, EventArgs e)
         {
             try
             {
-                lblDayCalendar_Error.Visible = false;
-                btnDayCalendar_PreviousDate.Enabled = true;
-                btnDayCalendar_NextDate.Enabled = true;
+                errorLabel.Visible = false;
+                previousDateButton.Enabled = true;
+                nextDateButton.Enabled = true;
 
-                int currentLunarYear = int.Parse(txtDayCalendar_Lunar_Year.Text);
+                int currentLunarYear = int.Parse(lunarYearTextBox.Text);
                 DayCalendar_ModifySelectedDate_Lunar(currentLunarDate.Month, currentLunarDate.IsLeapMonth, currentLunarYear);
-                cldLunarDayCalendar.SelectedDate = new DateTime(currentSolarDate.Year, currentSolarDate.Month, currentSolarDate.Day);
+                lunarDayCalendar.SelectedDate = new DateTime(currentSolarDate.Year, currentSolarDate.Month, currentSolarDate.Day);
             }
             catch (Exception exc)
             {
-                lblDayCalendar_Error.Text = "Lỗi: " + exc.Message;
-                lblDayCalendar_Error.Visible = true;
-                btnDayCalendar_PreviousDate.Enabled = false;
-                btnDayCalendar_NextDate.Enabled = false;
+                errorLabel.Text = "Lỗi: " + exc.Message;
+                errorLabel.Visible = true;
+                previousDateButton.Enabled = false;
+                nextDateButton.Enabled = false;
             }
         }
 
-        private void cmbDayCalendar_Lunar_Month_SelectedIndexChanged(object sender, EventArgs e)
+        private void LunarMonthComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cmbDayCalendar_Lunar_Month.SelectedIndex == -1)
+            if (lunarMonthComboBox.SelectedIndex == -1)
                 return;
 
             try
             {
-                lblDayCalendar_Error.Visible = false;
-                btnDayCalendar_PreviousDate.Enabled = true;
-                btnDayCalendar_NextDate.Enabled = true;
+                errorLabel.Visible = false;
+                previousDateButton.Enabled = true;
+                nextDateButton.Enabled = true;
 
-                int currentLunarMonth = int.Parse(cmbDayCalendar_Lunar_Month.Text.Substring(0, 2));
+                int currentLunarMonth = int.Parse(lunarMonthComboBox.Text[..2]);
                 bool currentLunarIsLeapMonth;
-                if (cmbDayCalendar_Lunar_Month.Text.Length > 2)
+                if (lunarMonthComboBox.Text.Length > 2)
                     currentLunarIsLeapMonth = true;
                 else
                     currentLunarIsLeapMonth = false;
                 DayCalendar_ModifySelectedDate_Lunar(currentLunarMonth, currentLunarIsLeapMonth, currentLunarDate.Year);
-                cldLunarDayCalendar.SelectedDate = new DateTime(currentSolarDate.Year, currentSolarDate.Month, currentSolarDate.Day);
+                lunarDayCalendar.SelectedDate = new DateTime(currentSolarDate.Year, currentSolarDate.Month, currentSolarDate.Day);
             }
             catch (Exception exc)
             {
-                lblDayCalendar_Error.Text = "Lỗi: " + exc.Message;
-                lblDayCalendar_Error.Visible = true;
-                btnDayCalendar_PreviousDate.Enabled = false;
-                btnDayCalendar_NextDate.Enabled = false;
+                errorLabel.Text = "Lỗi: " + exc.Message;
+                errorLabel.Visible = true;
+                previousDateButton.Enabled = false;
+                nextDateButton.Enabled = false;
             }
         }
 
@@ -315,13 +302,13 @@ namespace LunarCalendar
             }
 
             //Month
-            ArrayList months = LunarDate.GetMonths(lunarYear, timeZone);
+            List<string> months = LunarDate.GetMonths(lunarYear, timeZone);
             if (lunarIsLeapMonth)
             {
                 bool flag = false;
                 foreach (string month in months)
                 {
-                    if (month.Length > 2 && month.Substring(0, 2) == lunarMonth.ToString("00"))
+                    if (month.Length > 2 && month[..2] == lunarMonth.ToString("00"))
                     {
                         flag = true;
                         break;
@@ -340,143 +327,144 @@ namespace LunarCalendar
             currentSolarDate = currentLunarDate.ToSolarDate();
         }
 
-        private void cmbDayCalendar_Lunar_Day_SelectedIndexChanged(object sender, EventArgs e)
+        private void LunarDayComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cmbDayCalendar_Lunar_Day.SelectedIndex == -1)
+            if (lunarDayComboBox.SelectedIndex == -1)
                 return;
 
             try
             {
-                lblDayCalendar_Error.Visible = false;
-                btnDayCalendar_PreviousDate.Enabled = true;
-                btnDayCalendar_NextDate.Enabled = true;
+                errorLabel.Visible = false;
+                previousDateButton.Enabled = true;
+                nextDateButton.Enabled = true;
 
-                int currentLunarDay = int.Parse(cmbDayCalendar_Lunar_Day.Text);
+                int currentLunarDay = int.Parse(lunarDayComboBox.Text);
                 currentLunarDate = new LunarDate(currentLunarDay, currentLunarDate.Month, currentLunarDate.IsLeapMonth, currentLunarDate.Year, timeZone);
                 currentSolarDate = currentLunarDate.ToSolarDate();
-                cldLunarDayCalendar.SelectedDate = new DateTime(currentSolarDate.Year, currentSolarDate.Month, currentSolarDate.Day);
+                lunarDayCalendar.SelectedDate = new DateTime(currentSolarDate.Year, currentSolarDate.Month, currentSolarDate.Day);
             }
             catch (Exception exc)
             {
-                lblDayCalendar_Error.Text = "Lỗi: " + exc.Message;
-                lblDayCalendar_Error.Visible = true;
-                btnDayCalendar_PreviousDate.Enabled = false;
-                btnDayCalendar_NextDate.Enabled = false;
+                errorLabel.Text = "Lỗi: " + exc.Message;
+                errorLabel.Visible = true;
+                previousDateButton.Enabled = false;
+                nextDateButton.Enabled = false;
             }
         }
 
-        private void btnDayCalendar_PreviousDate_Click(object sender, EventArgs e)
+        private void PreviousDateButton_Click(object sender, EventArgs e)
         {
-            cldLunarDayCalendar.SelectedDate = cldLunarDayCalendar.SelectedDate.AddDays(-1);
+            lunarDayCalendar.SelectedDate = lunarDayCalendar.SelectedDate.AddDays(-1);
         }
 
-        private void btnDayCalendar_NextDate_Click(object sender, EventArgs e)
+        private void NextDateButton_Click(object sender, EventArgs e)
         {
-            cldLunarDayCalendar.SelectedDate = cldLunarDayCalendar.SelectedDate.AddDays(1);
+            lunarDayCalendar.SelectedDate = lunarDayCalendar.SelectedDate.AddDays(1);
         }
 
-        private void btnDayCalendar_Today_Click(object sender, EventArgs e)
+        private void TodayButton_Click(object sender, EventArgs e)
         {
-            cldLunarDayCalendar.SelectedDate = DateTime.Today;
+            lunarDayCalendar.SelectedDate = DateTime.Today;
         }
-        
-        private void rdbDayCalendar_CheckedChanged(object sender, EventArgs e)
-        {
-            txtDayCalendar_Solar_Year.Enabled = rdbDayCalendar_Solar.Checked;
-            cmbDayCalendar_Solar_Month.Enabled = rdbDayCalendar_Solar.Checked;
-            cmbDayCalendar_Solar_Day.Enabled = rdbDayCalendar_Solar.Checked;
 
-            txtDayCalendar_Lunar_Year.Enabled = rdbDayCalendar_Lunar.Checked;
-            cmbDayCalendar_Lunar_Month.Enabled = rdbDayCalendar_Lunar.Checked;
-            cmbDayCalendar_Lunar_Day.Enabled = rdbDayCalendar_Lunar.Checked;
+        private void DayCalendarRadioButton_CheckedChanged(object sender, EventArgs e)
+        {
+            solarYearTextBox.Enabled = solarCalendarRadioButton.Checked;
+            solarMonthComboBox.Enabled = solarCalendarRadioButton.Checked;
+            solarDayComboBox.Enabled = solarCalendarRadioButton.Checked;
+
+            lunarYearTextBox.Enabled = lunarCalendarRadioButton.Checked;
+            lunarMonthComboBox.Enabled = lunarCalendarRadioButton.Checked;
+            lunarDayComboBox.Enabled = lunarCalendarRadioButton.Checked;
         }
+
         //Tab MonthCalendar
-        private void txtMonthCalendar_Year_KeyDown(object sender, KeyEventArgs e)
+        private void YearTextBox_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
             {
-                btnMonthCalendar_Today.Focus();
+                thisMonthButton.Focus();
                 ((TextBox)sender).Focus();
             }
         }
 
-        private void MonthCalendar_FillValue()
+        private void MonthCalendar_FillValues()
         {
-            txtMonthCalendar_Year.Text = currentYear.ToString("0000");
-            cmbMonthCalendar_Month.Text = currentMonth.ToString("00");
+            yearTextBox.Text = currentYear.ToString("0000");
+            monthComboBox.Text = currentMonth.ToString("00");
         }
 
-        private void cldLunarMonthCalendar_SelectedMonthChanged(object sender, EventArgs e)
+        private void LunarMonthCalendar_SelectedMonthChanged(object sender, EventArgs e)
         {
-            currentMonth = cldLunarMonthCalendar.SelectedMonth.Month;
-            currentYear = cldLunarMonthCalendar.SelectedMonth.Year;
+            currentMonth = lunarMonthCalendar.SelectedMonth.Month;
+            currentYear = lunarMonthCalendar.SelectedMonth.Year;
 
-            txtMonthCalendar_Year.Text = cldLunarMonthCalendar.SelectedMonth.Year.ToString("0000");
-            cmbMonthCalendar_Month.Text = cldLunarMonthCalendar.SelectedMonth.Month.ToString("00");
+            yearTextBox.Text = lunarMonthCalendar.SelectedMonth.Year.ToString("0000");
+            monthComboBox.Text = lunarMonthCalendar.SelectedMonth.Month.ToString("00");
 
             if (currentYear == 1 && currentMonth == 1)
-                btnMonthCalendar_PreviousMonth.Enabled = false;
+                previousMonthButton.Enabled = false;
             else
-                btnMonthCalendar_PreviousMonth.Enabled = true;
+                previousMonthButton.Enabled = true;
 
             if (currentYear == 9999 && currentMonth == 12)
-                btnMonthCalendar_NextMonth.Enabled = false;
+                nextMonthButton.Enabled = false;
             else
-                btnMonthCalendar_NextMonth.Enabled = true;
+                nextMonthButton.Enabled = true;
         }
 
-        private void txtMonthCalendar_Year_Validating(object sender, CancelEventArgs e)
+        private void YearTextBox_Validating(object sender, CancelEventArgs e)
         {
             //Kiểm tra giá trị năm
-            if (currentYear == int.Parse(txtMonthCalendar_Year.Text))
+            if (currentYear == int.Parse(yearTextBox.Text))
                 return;
 
             try
             {
-                int year = int.Parse(txtMonthCalendar_Year.Text);
+                int year = int.Parse(yearTextBox.Text);
                 if (year < 1 || year > 9999)
                     throw new Exception();
-                txtMonthCalendar_Year.Text = year.ToString("0000");
+                yearTextBox.Text = year.ToString("0000");
             }
             catch
             {
                 MessageBox.Show("Nhập lại giá trị năm", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                txtMonthCalendar_Year.SelectAll();
+                yearTextBox.SelectAll();
                 e.Cancel = true;
             }
         }
 
-        private void txtMonthCalendar_Year_Validated(object sender, EventArgs e)
+        private void YearTextBox_Validated(object sender, EventArgs e)
         {
-            currentYear = int.Parse(txtMonthCalendar_Year.Text);
-            cldLunarMonthCalendar.SelectedMonth = new DateTime(currentYear, currentMonth, 1);
+            currentYear = int.Parse(yearTextBox.Text);
+            lunarMonthCalendar.SelectedMonth = new DateTime(currentYear, currentMonth, 1);
         }
 
-        private void cmbMonthCalendar_Month_SelectedIndexChanged(object sender, EventArgs e)
+        private void MonthComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            currentMonth = int.Parse(cmbMonthCalendar_Month.Text);
-            cldLunarMonthCalendar.SelectedMonth = new DateTime(currentYear, currentMonth, 1);
+            currentMonth = int.Parse(monthComboBox.Text);
+            lunarMonthCalendar.SelectedMonth = new DateTime(currentYear, currentMonth, 1);
         }
 
-        private void btnMonthCalendar_PreviousMonth_Click(object sender, EventArgs e)
+        private void PreviousMonthButton_Click(object sender, EventArgs e)
         {
             if (currentMonth == 1)
-                cldLunarMonthCalendar.SelectedMonth = new DateTime(currentYear - 1, 12, 1);
+                lunarMonthCalendar.SelectedMonth = new DateTime(currentYear - 1, 12, 1);
             else
-                cldLunarMonthCalendar.SelectedMonth = new DateTime(currentYear, currentMonth - 1, 1);
+                lunarMonthCalendar.SelectedMonth = new DateTime(currentYear, currentMonth - 1, 1);
         }
 
-        private void btnMonthCalendar_NextMonth_Click(object sender, EventArgs e)
+        private void NextMonthButton_Click(object sender, EventArgs e)
         {
             if (currentMonth == 12)
-                cldLunarMonthCalendar.SelectedMonth = new DateTime(currentYear + 1, 1, 1);
+                lunarMonthCalendar.SelectedMonth = new DateTime(currentYear + 1, 1, 1);
             else
-                cldLunarMonthCalendar.SelectedMonth = new DateTime(currentYear, currentMonth + 1, 1);
+                lunarMonthCalendar.SelectedMonth = new DateTime(currentYear, currentMonth + 1, 1);
         }
 
-        private void btnMonthCalendar_Today_Click(object sender, EventArgs e)
+        private void ThisMonthButton_Click(object sender, EventArgs e)
         {
-            cldLunarMonthCalendar.SelectedMonth = DateTime.Today;
+            lunarMonthCalendar.SelectedMonth = DateTime.Today;
         }
         #endregion
     }

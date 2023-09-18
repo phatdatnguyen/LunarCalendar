@@ -28,724 +28,842 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.lblSunday = new System.Windows.Forms.Label();
-            this.lblMonday = new System.Windows.Forms.Label();
-            this.lblTuesday = new System.Windows.Forms.Label();
-            this.lblWednesday = new System.Windows.Forms.Label();
-            this.lblThursday = new System.Windows.Forms.Label();
-            this.lblFriday = new System.Windows.Forms.Label();
-            this.lblSaturday = new System.Windows.Forms.Label();
-            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.de61 = new LunarCalendar.DateEntry();
-            this.de65 = new LunarCalendar.DateEntry();
-            this.de67 = new LunarCalendar.DateEntry();
-            this.de64 = new LunarCalendar.DateEntry();
-            this.de63 = new LunarCalendar.DateEntry();
-            this.de66 = new LunarCalendar.DateEntry();
-            this.de62 = new LunarCalendar.DateEntry();
-            this.de12 = new LunarCalendar.DateEntry();
-            this.de13 = new LunarCalendar.DateEntry();
-            this.de14 = new LunarCalendar.DateEntry();
-            this.de15 = new LunarCalendar.DateEntry();
-            this.de16 = new LunarCalendar.DateEntry();
-            this.de17 = new LunarCalendar.DateEntry();
-            this.de27 = new LunarCalendar.DateEntry();
-            this.de21 = new LunarCalendar.DateEntry();
-            this.de22 = new LunarCalendar.DateEntry();
-            this.de23 = new LunarCalendar.DateEntry();
-            this.de24 = new LunarCalendar.DateEntry();
-            this.de25 = new LunarCalendar.DateEntry();
-            this.de26 = new LunarCalendar.DateEntry();
-            this.de37 = new LunarCalendar.DateEntry();
-            this.de36 = new LunarCalendar.DateEntry();
-            this.de34 = new LunarCalendar.DateEntry();
-            this.de33 = new LunarCalendar.DateEntry();
-            this.de32 = new LunarCalendar.DateEntry();
-            this.de31 = new LunarCalendar.DateEntry();
-            this.de41 = new LunarCalendar.DateEntry();
-            this.de42 = new LunarCalendar.DateEntry();
-            this.de43 = new LunarCalendar.DateEntry();
-            this.de44 = new LunarCalendar.DateEntry();
-            this.de35 = new LunarCalendar.DateEntry();
-            this.de45 = new LunarCalendar.DateEntry();
-            this.de46 = new LunarCalendar.DateEntry();
-            this.de47 = new LunarCalendar.DateEntry();
-            this.de57 = new LunarCalendar.DateEntry();
-            this.de56 = new LunarCalendar.DateEntry();
-            this.de55 = new LunarCalendar.DateEntry();
-            this.de54 = new LunarCalendar.DateEntry();
-            this.de53 = new LunarCalendar.DateEntry();
-            this.de52 = new LunarCalendar.DateEntry();
-            this.de51 = new LunarCalendar.DateEntry();
-            this.de11 = new LunarCalendar.DateEntry();
-            this.SuspendLayout();
+            components = new System.ComponentModel.Container();
+            sundayLabel = new Label();
+            mondayLabel = new Label();
+            tuesdayLabel = new Label();
+            wednesdayLabel = new Label();
+            thursdayLabel = new Label();
+            fridayLabel = new Label();
+            saturdayLabel = new Label();
+            toolTip1 = new ToolTip(components);
+            de61 = new DateEntry();
+            de65 = new DateEntry();
+            de67 = new DateEntry();
+            de64 = new DateEntry();
+            de63 = new DateEntry();
+            de66 = new DateEntry();
+            de62 = new DateEntry();
+            de12 = new DateEntry();
+            de13 = new DateEntry();
+            de14 = new DateEntry();
+            de15 = new DateEntry();
+            de16 = new DateEntry();
+            de17 = new DateEntry();
+            de27 = new DateEntry();
+            de21 = new DateEntry();
+            de22 = new DateEntry();
+            de23 = new DateEntry();
+            de24 = new DateEntry();
+            de25 = new DateEntry();
+            de26 = new DateEntry();
+            de37 = new DateEntry();
+            de36 = new DateEntry();
+            de34 = new DateEntry();
+            de33 = new DateEntry();
+            de32 = new DateEntry();
+            de31 = new DateEntry();
+            de41 = new DateEntry();
+            de42 = new DateEntry();
+            de43 = new DateEntry();
+            de44 = new DateEntry();
+            de35 = new DateEntry();
+            de45 = new DateEntry();
+            de46 = new DateEntry();
+            de47 = new DateEntry();
+            de57 = new DateEntry();
+            de56 = new DateEntry();
+            de55 = new DateEntry();
+            de54 = new DateEntry();
+            de53 = new DateEntry();
+            de52 = new DateEntry();
+            de51 = new DateEntry();
+            de11 = new DateEntry();
+            tableLayoutPanel = new TableLayoutPanel();
+            tableLayoutPanel.SuspendLayout();
+            SuspendLayout();
             // 
-            // lblSunday
+            // sundayLabel
             // 
-            this.lblSunday.BackColor = System.Drawing.Color.Transparent;
-            this.lblSunday.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSunday.ForeColor = System.Drawing.Color.Red;
-            this.lblSunday.Location = new System.Drawing.Point(3, 3);
-            this.lblSunday.Name = "lblSunday";
-            this.lblSunday.Size = new System.Drawing.Size(82, 64);
-            this.lblSunday.TabIndex = 0;
-            this.lblSunday.Text = "Chủ\r\nnhật";
-            this.lblSunday.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            sundayLabel.BackColor = Color.Transparent;
+            sundayLabel.Dock = DockStyle.Fill;
+            sundayLabel.Font = new Font("Microsoft Sans Serif", 14F, FontStyle.Regular, GraphicsUnit.Point);
+            sundayLabel.ForeColor = Color.Red;
+            sundayLabel.Location = new Point(3, 0);
+            sundayLabel.Name = "sundayLabel";
+            sundayLabel.Size = new Size(102, 60);
+            sundayLabel.TabIndex = 0;
+            sundayLabel.Text = "Chủ\r\nnhật";
+            sundayLabel.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // lblMonday
+            // mondayLabel
             // 
-            this.lblMonday.BackColor = System.Drawing.Color.Transparent;
-            this.lblMonday.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMonday.Location = new System.Drawing.Point(91, 3);
-            this.lblMonday.Name = "lblMonday";
-            this.lblMonday.Size = new System.Drawing.Size(82, 64);
-            this.lblMonday.TabIndex = 0;
-            this.lblMonday.Text = "Thứ\r\nhai";
-            this.lblMonday.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            mondayLabel.BackColor = Color.Transparent;
+            mondayLabel.Dock = DockStyle.Fill;
+            mondayLabel.Font = new Font("Microsoft Sans Serif", 14F, FontStyle.Regular, GraphicsUnit.Point);
+            mondayLabel.Location = new Point(111, 0);
+            mondayLabel.Name = "mondayLabel";
+            mondayLabel.Size = new Size(102, 60);
+            mondayLabel.TabIndex = 0;
+            mondayLabel.Text = "Thứ\r\nhai";
+            mondayLabel.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // lblTuesday
+            // tuesdayLabel
             // 
-            this.lblTuesday.BackColor = System.Drawing.Color.Transparent;
-            this.lblTuesday.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTuesday.Location = new System.Drawing.Point(179, 3);
-            this.lblTuesday.Name = "lblTuesday";
-            this.lblTuesday.Size = new System.Drawing.Size(82, 64);
-            this.lblTuesday.TabIndex = 0;
-            this.lblTuesday.Text = "Thứ\r\nba";
-            this.lblTuesday.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            tuesdayLabel.BackColor = Color.Transparent;
+            tuesdayLabel.Dock = DockStyle.Fill;
+            tuesdayLabel.Font = new Font("Microsoft Sans Serif", 14F, FontStyle.Regular, GraphicsUnit.Point);
+            tuesdayLabel.Location = new Point(219, 0);
+            tuesdayLabel.Name = "tuesdayLabel";
+            tuesdayLabel.Size = new Size(102, 60);
+            tuesdayLabel.TabIndex = 0;
+            tuesdayLabel.Text = "Thứ\r\nba";
+            tuesdayLabel.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // lblWednesday
+            // wednesdayLabel
             // 
-            this.lblWednesday.BackColor = System.Drawing.Color.Transparent;
-            this.lblWednesday.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblWednesday.Location = new System.Drawing.Point(267, 3);
-            this.lblWednesday.Name = "lblWednesday";
-            this.lblWednesday.Size = new System.Drawing.Size(82, 64);
-            this.lblWednesday.TabIndex = 0;
-            this.lblWednesday.Text = "Thứ\r\ntư";
-            this.lblWednesday.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            wednesdayLabel.BackColor = Color.Transparent;
+            wednesdayLabel.Dock = DockStyle.Fill;
+            wednesdayLabel.Font = new Font("Microsoft Sans Serif", 14F, FontStyle.Regular, GraphicsUnit.Point);
+            wednesdayLabel.Location = new Point(327, 0);
+            wednesdayLabel.Name = "wednesdayLabel";
+            wednesdayLabel.Size = new Size(102, 60);
+            wednesdayLabel.TabIndex = 0;
+            wednesdayLabel.Text = "Thứ\r\ntư";
+            wednesdayLabel.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // lblThursday
+            // thursdayLabel
             // 
-            this.lblThursday.BackColor = System.Drawing.Color.Transparent;
-            this.lblThursday.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblThursday.Location = new System.Drawing.Point(355, 3);
-            this.lblThursday.Name = "lblThursday";
-            this.lblThursday.Size = new System.Drawing.Size(82, 64);
-            this.lblThursday.TabIndex = 0;
-            this.lblThursday.Text = "Thứ\r\nnăm";
-            this.lblThursday.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            thursdayLabel.BackColor = Color.Transparent;
+            thursdayLabel.Dock = DockStyle.Fill;
+            thursdayLabel.Font = new Font("Microsoft Sans Serif", 14F, FontStyle.Regular, GraphicsUnit.Point);
+            thursdayLabel.Location = new Point(435, 0);
+            thursdayLabel.Name = "thursdayLabel";
+            thursdayLabel.Size = new Size(102, 60);
+            thursdayLabel.TabIndex = 0;
+            thursdayLabel.Text = "Thứ\r\nnăm";
+            thursdayLabel.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // lblFriday
+            // fridayLabel
             // 
-            this.lblFriday.BackColor = System.Drawing.Color.Transparent;
-            this.lblFriday.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFriday.Location = new System.Drawing.Point(443, 3);
-            this.lblFriday.Name = "lblFriday";
-            this.lblFriday.Size = new System.Drawing.Size(82, 64);
-            this.lblFriday.TabIndex = 0;
-            this.lblFriday.Text = "Thứ\r\nsáu";
-            this.lblFriday.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            fridayLabel.BackColor = Color.Transparent;
+            fridayLabel.Dock = DockStyle.Fill;
+            fridayLabel.Font = new Font("Microsoft Sans Serif", 14F, FontStyle.Regular, GraphicsUnit.Point);
+            fridayLabel.Location = new Point(543, 0);
+            fridayLabel.Name = "fridayLabel";
+            fridayLabel.Size = new Size(102, 60);
+            fridayLabel.TabIndex = 0;
+            fridayLabel.Text = "Thứ\r\nsáu";
+            fridayLabel.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // lblSaturday
+            // saturdayLabel
             // 
-            this.lblSaturday.BackColor = System.Drawing.Color.Transparent;
-            this.lblSaturday.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSaturday.ForeColor = System.Drawing.Color.Blue;
-            this.lblSaturday.Location = new System.Drawing.Point(531, 3);
-            this.lblSaturday.Name = "lblSaturday";
-            this.lblSaturday.Size = new System.Drawing.Size(82, 64);
-            this.lblSaturday.TabIndex = 0;
-            this.lblSaturday.Text = "Thứ\r\nbảy";
-            this.lblSaturday.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            saturdayLabel.BackColor = Color.Transparent;
+            saturdayLabel.Dock = DockStyle.Fill;
+            saturdayLabel.Font = new Font("Microsoft Sans Serif", 14F, FontStyle.Regular, GraphicsUnit.Point);
+            saturdayLabel.ForeColor = Color.Blue;
+            saturdayLabel.Location = new Point(651, 0);
+            saturdayLabel.Name = "saturdayLabel";
+            saturdayLabel.Size = new Size(104, 60);
+            saturdayLabel.TabIndex = 0;
+            saturdayLabel.Text = "Thứ\r\nbảy";
+            saturdayLabel.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // de61
             // 
-            this.de61.BackColor = System.Drawing.Color.Transparent;
-            this.de61.ForeColor = System.Drawing.Color.Red;
-            this.de61.Location = new System.Drawing.Point(3, 375);
-            this.de61.LunarDate = 11;
-            this.de61.Name = "de61";
-            this.de61.Size = new System.Drawing.Size(82, 59);
-            this.de61.SolarDate = 11;
-            this.de61.TabIndex = 1;
-            this.de61.TabStop = false;
-            this.de61.ToolTip = "";
+            de61.BackColor = Color.Transparent;
+            de61.Dock = DockStyle.Fill;
+            de61.ForeColor = Color.Red;
+            de61.Location = new Point(4, 363);
+            de61.LunarDate = 11;
+            de61.Margin = new Padding(4, 3, 4, 3);
+            de61.Name = "de61";
+            de61.Size = new Size(100, 54);
+            de61.SolarDate = 11;
+            de61.TabIndex = 0;
+            de61.TabStop = false;
+            de61.ToolTip = "";
             // 
             // de65
             // 
-            this.de65.BackColor = System.Drawing.Color.Transparent;
-            this.de65.Location = new System.Drawing.Point(355, 375);
-            this.de65.LunarDate = 11;
-            this.de65.Name = "de65";
-            this.de65.Size = new System.Drawing.Size(82, 59);
-            this.de65.SolarDate = 11;
-            this.de65.TabIndex = 23;
-            this.de65.TabStop = false;
-            this.de65.ToolTip = "";
+            de65.BackColor = Color.Transparent;
+            de65.Dock = DockStyle.Fill;
+            de65.Location = new Point(436, 363);
+            de65.LunarDate = 11;
+            de65.Margin = new Padding(4, 3, 4, 3);
+            de65.Name = "de65";
+            de65.Size = new Size(100, 54);
+            de65.SolarDate = 11;
+            de65.TabIndex = 0;
+            de65.TabStop = false;
+            de65.ToolTip = "";
             // 
             // de67
             // 
-            this.de67.BackColor = System.Drawing.Color.Transparent;
-            this.de67.ForeColor = System.Drawing.Color.Blue;
-            this.de67.Location = new System.Drawing.Point(531, 375);
-            this.de67.LunarDate = 11;
-            this.de67.Name = "de67";
-            this.de67.Size = new System.Drawing.Size(86, 59);
-            this.de67.SolarDate = 11;
-            this.de67.TabIndex = 24;
-            this.de67.TabStop = false;
-            this.de67.ToolTip = "";
+            de67.BackColor = Color.Transparent;
+            de67.Dock = DockStyle.Fill;
+            de67.ForeColor = Color.Blue;
+            de67.Location = new Point(652, 363);
+            de67.LunarDate = 11;
+            de67.Margin = new Padding(4, 3, 4, 3);
+            de67.Name = "de67";
+            de67.Size = new Size(102, 54);
+            de67.SolarDate = 11;
+            de67.TabIndex = 0;
+            de67.TabStop = false;
+            de67.ToolTip = "";
             // 
             // de64
             // 
-            this.de64.BackColor = System.Drawing.Color.Transparent;
-            this.de64.Location = new System.Drawing.Point(267, 375);
-            this.de64.LunarDate = 11;
-            this.de64.Name = "de64";
-            this.de64.Size = new System.Drawing.Size(82, 59);
-            this.de64.SolarDate = 11;
-            this.de64.TabIndex = 25;
-            this.de64.TabStop = false;
-            this.de64.ToolTip = "";
+            de64.BackColor = Color.Transparent;
+            de64.Dock = DockStyle.Fill;
+            de64.Location = new Point(328, 363);
+            de64.LunarDate = 11;
+            de64.Margin = new Padding(4, 3, 4, 3);
+            de64.Name = "de64";
+            de64.Size = new Size(100, 54);
+            de64.SolarDate = 11;
+            de64.TabIndex = 0;
+            de64.TabStop = false;
+            de64.ToolTip = "";
             // 
             // de63
             // 
-            this.de63.BackColor = System.Drawing.Color.Transparent;
-            this.de63.Location = new System.Drawing.Point(179, 375);
-            this.de63.LunarDate = 11;
-            this.de63.Name = "de63";
-            this.de63.Size = new System.Drawing.Size(82, 59);
-            this.de63.SolarDate = 11;
-            this.de63.TabIndex = 26;
-            this.de63.TabStop = false;
-            this.de63.ToolTip = "";
+            de63.BackColor = Color.Transparent;
+            de63.Dock = DockStyle.Fill;
+            de63.Location = new Point(220, 363);
+            de63.LunarDate = 11;
+            de63.Margin = new Padding(4, 3, 4, 3);
+            de63.Name = "de63";
+            de63.Size = new Size(100, 54);
+            de63.SolarDate = 11;
+            de63.TabIndex = 0;
+            de63.TabStop = false;
+            de63.ToolTip = "";
             // 
             // de66
             // 
-            this.de66.BackColor = System.Drawing.Color.Transparent;
-            this.de66.Location = new System.Drawing.Point(443, 375);
-            this.de66.LunarDate = 11;
-            this.de66.Name = "de66";
-            this.de66.Size = new System.Drawing.Size(82, 59);
-            this.de66.SolarDate = 11;
-            this.de66.TabIndex = 27;
-            this.de66.TabStop = false;
-            this.de66.ToolTip = "";
+            de66.BackColor = Color.Transparent;
+            de66.Dock = DockStyle.Fill;
+            de66.Location = new Point(544, 363);
+            de66.LunarDate = 11;
+            de66.Margin = new Padding(4, 3, 4, 3);
+            de66.Name = "de66";
+            de66.Size = new Size(100, 54);
+            de66.SolarDate = 11;
+            de66.TabIndex = 0;
+            de66.TabStop = false;
+            de66.ToolTip = "";
             // 
             // de62
             // 
-            this.de62.BackColor = System.Drawing.Color.Transparent;
-            this.de62.Location = new System.Drawing.Point(91, 375);
-            this.de62.LunarDate = 11;
-            this.de62.Name = "de62";
-            this.de62.Size = new System.Drawing.Size(82, 59);
-            this.de62.SolarDate = 11;
-            this.de62.TabIndex = 28;
-            this.de62.TabStop = false;
-            this.de62.ToolTip = "";
+            de62.BackColor = Color.Transparent;
+            de62.Dock = DockStyle.Fill;
+            de62.Location = new Point(112, 363);
+            de62.LunarDate = 11;
+            de62.Margin = new Padding(4, 3, 4, 3);
+            de62.Name = "de62";
+            de62.Size = new Size(100, 54);
+            de62.SolarDate = 11;
+            de62.TabIndex = 0;
+            de62.TabStop = false;
+            de62.ToolTip = "";
             // 
             // de12
             // 
-            this.de12.BackColor = System.Drawing.Color.Transparent;
-            this.de12.Location = new System.Drawing.Point(91, 70);
-            this.de12.LunarDate = 11;
-            this.de12.Name = "de12";
-            this.de12.Size = new System.Drawing.Size(82, 55);
-            this.de12.SolarDate = 11;
-            this.de12.TabIndex = 29;
-            this.de12.TabStop = false;
-            this.de12.ToolTip = "";
+            de12.BackColor = Color.Transparent;
+            de12.Dock = DockStyle.Fill;
+            de12.Location = new Point(112, 63);
+            de12.LunarDate = 11;
+            de12.Margin = new Padding(4, 3, 4, 3);
+            de12.Name = "de12";
+            de12.Size = new Size(100, 54);
+            de12.SolarDate = 11;
+            de12.TabIndex = 0;
+            de12.TabStop = false;
+            de12.ToolTip = "";
             // 
             // de13
             // 
-            this.de13.BackColor = System.Drawing.Color.Transparent;
-            this.de13.Location = new System.Drawing.Point(179, 70);
-            this.de13.LunarDate = 11;
-            this.de13.Name = "de13";
-            this.de13.Size = new System.Drawing.Size(82, 55);
-            this.de13.SolarDate = 11;
-            this.de13.TabIndex = 30;
-            this.de13.TabStop = false;
-            this.de13.ToolTip = "";
+            de13.BackColor = Color.Transparent;
+            de13.Dock = DockStyle.Fill;
+            de13.Location = new Point(220, 63);
+            de13.LunarDate = 11;
+            de13.Margin = new Padding(4, 3, 4, 3);
+            de13.Name = "de13";
+            de13.Size = new Size(100, 54);
+            de13.SolarDate = 11;
+            de13.TabIndex = 0;
+            de13.TabStop = false;
+            de13.ToolTip = "";
             // 
             // de14
             // 
-            this.de14.BackColor = System.Drawing.Color.Transparent;
-            this.de14.Location = new System.Drawing.Point(267, 70);
-            this.de14.LunarDate = 11;
-            this.de14.Name = "de14";
-            this.de14.Size = new System.Drawing.Size(82, 55);
-            this.de14.SolarDate = 11;
-            this.de14.TabIndex = 32;
-            this.de14.TabStop = false;
-            this.de14.ToolTip = "";
+            de14.BackColor = Color.Transparent;
+            de14.Dock = DockStyle.Fill;
+            de14.Location = new Point(328, 63);
+            de14.LunarDate = 11;
+            de14.Margin = new Padding(4, 3, 4, 3);
+            de14.Name = "de14";
+            de14.Size = new Size(100, 54);
+            de14.SolarDate = 11;
+            de14.TabIndex = 0;
+            de14.TabStop = false;
+            de14.ToolTip = "";
             // 
             // de15
             // 
-            this.de15.BackColor = System.Drawing.Color.Transparent;
-            this.de15.Location = new System.Drawing.Point(355, 70);
-            this.de15.LunarDate = 11;
-            this.de15.Name = "de15";
-            this.de15.Size = new System.Drawing.Size(82, 55);
-            this.de15.SolarDate = 11;
-            this.de15.TabIndex = 41;
-            this.de15.TabStop = false;
-            this.de15.ToolTip = "";
+            de15.BackColor = Color.Transparent;
+            de15.Dock = DockStyle.Fill;
+            de15.Location = new Point(436, 63);
+            de15.LunarDate = 11;
+            de15.Margin = new Padding(4, 3, 4, 3);
+            de15.Name = "de15";
+            de15.Size = new Size(100, 54);
+            de15.SolarDate = 11;
+            de15.TabIndex = 0;
+            de15.TabStop = false;
+            de15.ToolTip = "";
             // 
             // de16
             // 
-            this.de16.BackColor = System.Drawing.Color.Transparent;
-            this.de16.Location = new System.Drawing.Point(443, 70);
-            this.de16.LunarDate = 11;
-            this.de16.Name = "de16";
-            this.de16.Size = new System.Drawing.Size(82, 55);
-            this.de16.SolarDate = 11;
-            this.de16.TabIndex = 33;
-            this.de16.TabStop = false;
-            this.de16.ToolTip = "";
+            de16.BackColor = Color.Transparent;
+            de16.Dock = DockStyle.Fill;
+            de16.Location = new Point(544, 63);
+            de16.LunarDate = 11;
+            de16.Margin = new Padding(4, 3, 4, 3);
+            de16.Name = "de16";
+            de16.Size = new Size(100, 54);
+            de16.SolarDate = 11;
+            de16.TabIndex = 0;
+            de16.TabStop = false;
+            de16.ToolTip = "";
             // 
             // de17
             // 
-            this.de17.BackColor = System.Drawing.Color.Transparent;
-            this.de17.ForeColor = System.Drawing.Color.Blue;
-            this.de17.Location = new System.Drawing.Point(531, 70);
-            this.de17.LunarDate = 11;
-            this.de17.Name = "de17";
-            this.de17.Size = new System.Drawing.Size(86, 55);
-            this.de17.SolarDate = 11;
-            this.de17.TabIndex = 34;
-            this.de17.TabStop = false;
-            this.de17.ToolTip = "";
+            de17.BackColor = Color.Transparent;
+            de17.Dock = DockStyle.Fill;
+            de17.ForeColor = Color.Blue;
+            de17.Location = new Point(652, 63);
+            de17.LunarDate = 11;
+            de17.Margin = new Padding(4, 3, 4, 3);
+            de17.Name = "de17";
+            de17.Size = new Size(102, 54);
+            de17.SolarDate = 11;
+            de17.TabIndex = 0;
+            de17.TabStop = false;
+            de17.ToolTip = "";
             // 
             // de27
             // 
-            this.de27.BackColor = System.Drawing.Color.Transparent;
-            this.de27.ForeColor = System.Drawing.Color.Blue;
-            this.de27.Location = new System.Drawing.Point(531, 131);
-            this.de27.LunarDate = 11;
-            this.de27.Name = "de27";
-            this.de27.Size = new System.Drawing.Size(86, 55);
-            this.de27.SolarDate = 11;
-            this.de27.TabIndex = 35;
-            this.de27.TabStop = false;
-            this.de27.ToolTip = "";
+            de27.BackColor = Color.Transparent;
+            de27.Dock = DockStyle.Fill;
+            de27.ForeColor = Color.Blue;
+            de27.Location = new Point(652, 123);
+            de27.LunarDate = 11;
+            de27.Margin = new Padding(4, 3, 4, 3);
+            de27.Name = "de27";
+            de27.Size = new Size(102, 54);
+            de27.SolarDate = 11;
+            de27.TabIndex = 0;
+            de27.TabStop = false;
+            de27.ToolTip = "";
             // 
             // de21
             // 
-            this.de21.BackColor = System.Drawing.Color.Transparent;
-            this.de21.ForeColor = System.Drawing.Color.Red;
-            this.de21.Location = new System.Drawing.Point(3, 131);
-            this.de21.LunarDate = 11;
-            this.de21.Name = "de21";
-            this.de21.Size = new System.Drawing.Size(82, 55);
-            this.de21.SolarDate = 11;
-            this.de21.TabIndex = 36;
-            this.de21.TabStop = false;
-            this.de21.ToolTip = "";
+            de21.BackColor = Color.Transparent;
+            de21.Dock = DockStyle.Fill;
+            de21.ForeColor = Color.Red;
+            de21.Location = new Point(4, 123);
+            de21.LunarDate = 11;
+            de21.Margin = new Padding(4, 3, 4, 3);
+            de21.Name = "de21";
+            de21.Size = new Size(100, 54);
+            de21.SolarDate = 11;
+            de21.TabIndex = 0;
+            de21.TabStop = false;
+            de21.ToolTip = "";
             // 
             // de22
             // 
-            this.de22.BackColor = System.Drawing.Color.Transparent;
-            this.de22.Location = new System.Drawing.Point(91, 131);
-            this.de22.LunarDate = 11;
-            this.de22.Name = "de22";
-            this.de22.Size = new System.Drawing.Size(82, 55);
-            this.de22.SolarDate = 11;
-            this.de22.TabIndex = 37;
-            this.de22.TabStop = false;
-            this.de22.ToolTip = "";
+            de22.BackColor = Color.Transparent;
+            de22.Dock = DockStyle.Fill;
+            de22.Location = new Point(112, 123);
+            de22.LunarDate = 11;
+            de22.Margin = new Padding(4, 3, 4, 3);
+            de22.Name = "de22";
+            de22.Size = new Size(100, 54);
+            de22.SolarDate = 11;
+            de22.TabIndex = 0;
+            de22.TabStop = false;
+            de22.ToolTip = "";
             // 
             // de23
             // 
-            this.de23.BackColor = System.Drawing.Color.Transparent;
-            this.de23.Location = new System.Drawing.Point(179, 131);
-            this.de23.LunarDate = 11;
-            this.de23.Name = "de23";
-            this.de23.Size = new System.Drawing.Size(82, 55);
-            this.de23.SolarDate = 11;
-            this.de23.TabIndex = 38;
-            this.de23.TabStop = false;
-            this.de23.ToolTip = "";
+            de23.BackColor = Color.Transparent;
+            de23.Dock = DockStyle.Fill;
+            de23.Location = new Point(220, 123);
+            de23.LunarDate = 11;
+            de23.Margin = new Padding(4, 3, 4, 3);
+            de23.Name = "de23";
+            de23.Size = new Size(100, 54);
+            de23.SolarDate = 11;
+            de23.TabIndex = 0;
+            de23.TabStop = false;
+            de23.ToolTip = "";
             // 
             // de24
             // 
-            this.de24.BackColor = System.Drawing.Color.Transparent;
-            this.de24.Location = new System.Drawing.Point(267, 131);
-            this.de24.LunarDate = 11;
-            this.de24.Name = "de24";
-            this.de24.Size = new System.Drawing.Size(82, 55);
-            this.de24.SolarDate = 11;
-            this.de24.TabIndex = 39;
-            this.de24.TabStop = false;
-            this.de24.ToolTip = "";
+            de24.BackColor = Color.Transparent;
+            de24.Dock = DockStyle.Fill;
+            de24.Location = new Point(328, 123);
+            de24.LunarDate = 11;
+            de24.Margin = new Padding(4, 3, 4, 3);
+            de24.Name = "de24";
+            de24.Size = new Size(100, 54);
+            de24.SolarDate = 11;
+            de24.TabIndex = 0;
+            de24.TabStop = false;
+            de24.ToolTip = "";
             // 
             // de25
             // 
-            this.de25.BackColor = System.Drawing.Color.Transparent;
-            this.de25.Location = new System.Drawing.Point(355, 131);
-            this.de25.LunarDate = 11;
-            this.de25.Name = "de25";
-            this.de25.Size = new System.Drawing.Size(82, 55);
-            this.de25.SolarDate = 11;
-            this.de25.TabIndex = 40;
-            this.de25.TabStop = false;
-            this.de25.ToolTip = "";
+            de25.BackColor = Color.Transparent;
+            de25.Dock = DockStyle.Fill;
+            de25.Location = new Point(436, 123);
+            de25.LunarDate = 11;
+            de25.Margin = new Padding(4, 3, 4, 3);
+            de25.Name = "de25";
+            de25.Size = new Size(100, 54);
+            de25.SolarDate = 11;
+            de25.TabIndex = 0;
+            de25.TabStop = false;
+            de25.ToolTip = "";
             // 
             // de26
             // 
-            this.de26.BackColor = System.Drawing.Color.Transparent;
-            this.de26.Location = new System.Drawing.Point(443, 131);
-            this.de26.LunarDate = 11;
-            this.de26.Name = "de26";
-            this.de26.Size = new System.Drawing.Size(82, 55);
-            this.de26.SolarDate = 11;
-            this.de26.TabIndex = 22;
-            this.de26.TabStop = false;
-            this.de26.ToolTip = "";
+            de26.BackColor = Color.Transparent;
+            de26.Dock = DockStyle.Fill;
+            de26.Location = new Point(544, 123);
+            de26.LunarDate = 11;
+            de26.Margin = new Padding(4, 3, 4, 3);
+            de26.Name = "de26";
+            de26.Size = new Size(100, 54);
+            de26.SolarDate = 11;
+            de26.TabIndex = 0;
+            de26.TabStop = false;
+            de26.ToolTip = "";
             // 
             // de37
             // 
-            this.de37.BackColor = System.Drawing.Color.Transparent;
-            this.de37.ForeColor = System.Drawing.Color.Blue;
-            this.de37.Location = new System.Drawing.Point(531, 192);
-            this.de37.LunarDate = 11;
-            this.de37.Name = "de37";
-            this.de37.Size = new System.Drawing.Size(86, 55);
-            this.de37.SolarDate = 11;
-            this.de37.TabIndex = 21;
-            this.de37.TabStop = false;
-            this.de37.ToolTip = "";
+            de37.BackColor = Color.Transparent;
+            de37.Dock = DockStyle.Fill;
+            de37.ForeColor = Color.Blue;
+            de37.Location = new Point(652, 183);
+            de37.LunarDate = 11;
+            de37.Margin = new Padding(4, 3, 4, 3);
+            de37.Name = "de37";
+            de37.Size = new Size(102, 54);
+            de37.SolarDate = 11;
+            de37.TabIndex = 0;
+            de37.TabStop = false;
+            de37.ToolTip = "";
             // 
             // de36
             // 
-            this.de36.BackColor = System.Drawing.Color.Transparent;
-            this.de36.Location = new System.Drawing.Point(443, 192);
-            this.de36.LunarDate = 11;
-            this.de36.Name = "de36";
-            this.de36.Size = new System.Drawing.Size(82, 55);
-            this.de36.SolarDate = 11;
-            this.de36.TabIndex = 20;
-            this.de36.TabStop = false;
-            this.de36.ToolTip = "";
+            de36.BackColor = Color.Transparent;
+            de36.Dock = DockStyle.Fill;
+            de36.Location = new Point(544, 183);
+            de36.LunarDate = 11;
+            de36.Margin = new Padding(4, 3, 4, 3);
+            de36.Name = "de36";
+            de36.Size = new Size(100, 54);
+            de36.SolarDate = 11;
+            de36.TabIndex = 0;
+            de36.TabStop = false;
+            de36.ToolTip = "";
             // 
             // de34
             // 
-            this.de34.BackColor = System.Drawing.Color.Transparent;
-            this.de34.Location = new System.Drawing.Point(267, 192);
-            this.de34.LunarDate = 11;
-            this.de34.Name = "de34";
-            this.de34.Size = new System.Drawing.Size(82, 55);
-            this.de34.SolarDate = 11;
-            this.de34.TabIndex = 19;
-            this.de34.TabStop = false;
-            this.de34.ToolTip = "";
+            de34.BackColor = Color.Transparent;
+            de34.Dock = DockStyle.Fill;
+            de34.Location = new Point(328, 183);
+            de34.LunarDate = 11;
+            de34.Margin = new Padding(4, 3, 4, 3);
+            de34.Name = "de34";
+            de34.Size = new Size(100, 54);
+            de34.SolarDate = 11;
+            de34.TabIndex = 0;
+            de34.TabStop = false;
+            de34.ToolTip = "";
             // 
             // de33
             // 
-            this.de33.BackColor = System.Drawing.Color.Transparent;
-            this.de33.Location = new System.Drawing.Point(179, 192);
-            this.de33.LunarDate = 11;
-            this.de33.Name = "de33";
-            this.de33.Size = new System.Drawing.Size(82, 55);
-            this.de33.SolarDate = 11;
-            this.de33.TabIndex = 2;
-            this.de33.TabStop = false;
-            this.de33.ToolTip = "";
+            de33.BackColor = Color.Transparent;
+            de33.Dock = DockStyle.Fill;
+            de33.Location = new Point(220, 183);
+            de33.LunarDate = 11;
+            de33.Margin = new Padding(4, 3, 4, 3);
+            de33.Name = "de33";
+            de33.Size = new Size(100, 54);
+            de33.SolarDate = 11;
+            de33.TabIndex = 0;
+            de33.TabStop = false;
+            de33.ToolTip = "";
             // 
             // de32
             // 
-            this.de32.BackColor = System.Drawing.Color.Transparent;
-            this.de32.Location = new System.Drawing.Point(91, 192);
-            this.de32.LunarDate = 11;
-            this.de32.Name = "de32";
-            this.de32.Size = new System.Drawing.Size(82, 55);
-            this.de32.SolarDate = 11;
-            this.de32.TabIndex = 3;
-            this.de32.TabStop = false;
-            this.de32.ToolTip = "";
+            de32.BackColor = Color.Transparent;
+            de32.Dock = DockStyle.Fill;
+            de32.Location = new Point(112, 183);
+            de32.LunarDate = 11;
+            de32.Margin = new Padding(4, 3, 4, 3);
+            de32.Name = "de32";
+            de32.Size = new Size(100, 54);
+            de32.SolarDate = 11;
+            de32.TabIndex = 0;
+            de32.TabStop = false;
+            de32.ToolTip = "";
             // 
             // de31
             // 
-            this.de31.BackColor = System.Drawing.Color.Transparent;
-            this.de31.ForeColor = System.Drawing.Color.Red;
-            this.de31.Location = new System.Drawing.Point(3, 192);
-            this.de31.LunarDate = 11;
-            this.de31.Name = "de31";
-            this.de31.Size = new System.Drawing.Size(82, 55);
-            this.de31.SolarDate = 11;
-            this.de31.TabIndex = 4;
-            this.de31.TabStop = false;
-            this.de31.ToolTip = "";
+            de31.BackColor = Color.Transparent;
+            de31.Dock = DockStyle.Fill;
+            de31.ForeColor = Color.Red;
+            de31.Location = new Point(4, 183);
+            de31.LunarDate = 11;
+            de31.Margin = new Padding(4, 3, 4, 3);
+            de31.Name = "de31";
+            de31.Size = new Size(100, 54);
+            de31.SolarDate = 11;
+            de31.TabIndex = 0;
+            de31.TabStop = false;
+            de31.ToolTip = "";
             // 
             // de41
             // 
-            this.de41.BackColor = System.Drawing.Color.Transparent;
-            this.de41.ForeColor = System.Drawing.Color.Red;
-            this.de41.Location = new System.Drawing.Point(3, 253);
-            this.de41.LunarDate = 11;
-            this.de41.Name = "de41";
-            this.de41.Size = new System.Drawing.Size(82, 55);
-            this.de41.SolarDate = 11;
-            this.de41.TabIndex = 5;
-            this.de41.TabStop = false;
-            this.de41.ToolTip = "";
+            de41.BackColor = Color.Transparent;
+            de41.Dock = DockStyle.Fill;
+            de41.ForeColor = Color.Red;
+            de41.Location = new Point(4, 243);
+            de41.LunarDate = 11;
+            de41.Margin = new Padding(4, 3, 4, 3);
+            de41.Name = "de41";
+            de41.Size = new Size(100, 54);
+            de41.SolarDate = 11;
+            de41.TabIndex = 0;
+            de41.TabStop = false;
+            de41.ToolTip = "";
             // 
             // de42
             // 
-            this.de42.BackColor = System.Drawing.Color.Transparent;
-            this.de42.Location = new System.Drawing.Point(91, 253);
-            this.de42.LunarDate = 11;
-            this.de42.Name = "de42";
-            this.de42.Size = new System.Drawing.Size(82, 55);
-            this.de42.SolarDate = 11;
-            this.de42.TabIndex = 6;
-            this.de42.TabStop = false;
-            this.de42.ToolTip = "";
+            de42.BackColor = Color.Transparent;
+            de42.Dock = DockStyle.Fill;
+            de42.Location = new Point(112, 243);
+            de42.LunarDate = 11;
+            de42.Margin = new Padding(4, 3, 4, 3);
+            de42.Name = "de42";
+            de42.Size = new Size(100, 54);
+            de42.SolarDate = 11;
+            de42.TabIndex = 0;
+            de42.TabStop = false;
+            de42.ToolTip = "";
             // 
             // de43
             // 
-            this.de43.BackColor = System.Drawing.Color.Transparent;
-            this.de43.Location = new System.Drawing.Point(179, 253);
-            this.de43.LunarDate = 11;
-            this.de43.Name = "de43";
-            this.de43.Size = new System.Drawing.Size(82, 55);
-            this.de43.SolarDate = 11;
-            this.de43.TabIndex = 7;
-            this.de43.TabStop = false;
-            this.de43.ToolTip = "";
+            de43.BackColor = Color.Transparent;
+            de43.Dock = DockStyle.Fill;
+            de43.Location = new Point(220, 243);
+            de43.LunarDate = 11;
+            de43.Margin = new Padding(4, 3, 4, 3);
+            de43.Name = "de43";
+            de43.Size = new Size(100, 54);
+            de43.SolarDate = 11;
+            de43.TabIndex = 0;
+            de43.TabStop = false;
+            de43.ToolTip = "";
             // 
             // de44
             // 
-            this.de44.BackColor = System.Drawing.Color.Transparent;
-            this.de44.Location = new System.Drawing.Point(267, 253);
-            this.de44.LunarDate = 11;
-            this.de44.Name = "de44";
-            this.de44.Size = new System.Drawing.Size(82, 55);
-            this.de44.SolarDate = 11;
-            this.de44.TabIndex = 8;
-            this.de44.TabStop = false;
-            this.de44.ToolTip = "";
+            de44.BackColor = Color.Transparent;
+            de44.Dock = DockStyle.Fill;
+            de44.Location = new Point(328, 243);
+            de44.LunarDate = 11;
+            de44.Margin = new Padding(4, 3, 4, 3);
+            de44.Name = "de44";
+            de44.Size = new Size(100, 54);
+            de44.SolarDate = 11;
+            de44.TabIndex = 0;
+            de44.TabStop = false;
+            de44.ToolTip = "";
             // 
             // de35
             // 
-            this.de35.BackColor = System.Drawing.Color.Transparent;
-            this.de35.Location = new System.Drawing.Point(355, 192);
-            this.de35.LunarDate = 11;
-            this.de35.Name = "de35";
-            this.de35.Size = new System.Drawing.Size(82, 55);
-            this.de35.SolarDate = 11;
-            this.de35.TabIndex = 9;
-            this.de35.TabStop = false;
-            this.de35.ToolTip = "";
+            de35.BackColor = Color.Transparent;
+            de35.Dock = DockStyle.Fill;
+            de35.Location = new Point(436, 183);
+            de35.LunarDate = 11;
+            de35.Margin = new Padding(4, 3, 4, 3);
+            de35.Name = "de35";
+            de35.Size = new Size(100, 54);
+            de35.SolarDate = 11;
+            de35.TabIndex = 0;
+            de35.TabStop = false;
+            de35.ToolTip = "";
             // 
             // de45
             // 
-            this.de45.BackColor = System.Drawing.Color.Transparent;
-            this.de45.Location = new System.Drawing.Point(355, 253);
-            this.de45.LunarDate = 11;
-            this.de45.Name = "de45";
-            this.de45.Size = new System.Drawing.Size(82, 55);
-            this.de45.SolarDate = 11;
-            this.de45.TabIndex = 10;
-            this.de45.TabStop = false;
-            this.de45.ToolTip = "";
+            de45.BackColor = Color.Transparent;
+            de45.Dock = DockStyle.Fill;
+            de45.Location = new Point(436, 243);
+            de45.LunarDate = 11;
+            de45.Margin = new Padding(4, 3, 4, 3);
+            de45.Name = "de45";
+            de45.Size = new Size(100, 54);
+            de45.SolarDate = 11;
+            de45.TabIndex = 0;
+            de45.TabStop = false;
+            de45.ToolTip = "";
             // 
             // de46
             // 
-            this.de46.BackColor = System.Drawing.Color.Transparent;
-            this.de46.Location = new System.Drawing.Point(443, 253);
-            this.de46.LunarDate = 11;
-            this.de46.Name = "de46";
-            this.de46.Size = new System.Drawing.Size(82, 55);
-            this.de46.SolarDate = 11;
-            this.de46.TabIndex = 11;
-            this.de46.TabStop = false;
-            this.de46.ToolTip = "";
+            de46.BackColor = Color.Transparent;
+            de46.Dock = DockStyle.Fill;
+            de46.Location = new Point(544, 243);
+            de46.LunarDate = 11;
+            de46.Margin = new Padding(4, 3, 4, 3);
+            de46.Name = "de46";
+            de46.Size = new Size(100, 54);
+            de46.SolarDate = 11;
+            de46.TabIndex = 0;
+            de46.TabStop = false;
+            de46.ToolTip = "";
             // 
             // de47
             // 
-            this.de47.BackColor = System.Drawing.Color.Transparent;
-            this.de47.ForeColor = System.Drawing.Color.Blue;
-            this.de47.Location = new System.Drawing.Point(531, 253);
-            this.de47.LunarDate = 11;
-            this.de47.Name = "de47";
-            this.de47.Size = new System.Drawing.Size(86, 55);
-            this.de47.SolarDate = 11;
-            this.de47.TabIndex = 12;
-            this.de47.TabStop = false;
-            this.de47.ToolTip = "";
+            de47.BackColor = Color.Transparent;
+            de47.Dock = DockStyle.Fill;
+            de47.ForeColor = Color.Blue;
+            de47.Location = new Point(652, 243);
+            de47.LunarDate = 11;
+            de47.Margin = new Padding(4, 3, 4, 3);
+            de47.Name = "de47";
+            de47.Size = new Size(102, 54);
+            de47.SolarDate = 11;
+            de47.TabIndex = 0;
+            de47.TabStop = false;
+            de47.ToolTip = "";
             // 
             // de57
             // 
-            this.de57.BackColor = System.Drawing.Color.Transparent;
-            this.de57.ForeColor = System.Drawing.Color.Blue;
-            this.de57.Location = new System.Drawing.Point(531, 314);
-            this.de57.LunarDate = 11;
-            this.de57.Name = "de57";
-            this.de57.Size = new System.Drawing.Size(86, 55);
-            this.de57.SolarDate = 11;
-            this.de57.TabIndex = 13;
-            this.de57.TabStop = false;
-            this.de57.ToolTip = "";
+            de57.BackColor = Color.Transparent;
+            de57.Dock = DockStyle.Fill;
+            de57.ForeColor = Color.Blue;
+            de57.Location = new Point(652, 303);
+            de57.LunarDate = 11;
+            de57.Margin = new Padding(4, 3, 4, 3);
+            de57.Name = "de57";
+            de57.Size = new Size(102, 54);
+            de57.SolarDate = 11;
+            de57.TabIndex = 0;
+            de57.TabStop = false;
+            de57.ToolTip = "";
             // 
             // de56
             // 
-            this.de56.BackColor = System.Drawing.Color.Transparent;
-            this.de56.Location = new System.Drawing.Point(443, 314);
-            this.de56.LunarDate = 11;
-            this.de56.Name = "de56";
-            this.de56.Size = new System.Drawing.Size(82, 55);
-            this.de56.SolarDate = 11;
-            this.de56.TabIndex = 14;
-            this.de56.TabStop = false;
-            this.de56.ToolTip = "";
+            de56.BackColor = Color.Transparent;
+            de56.Dock = DockStyle.Fill;
+            de56.Location = new Point(544, 303);
+            de56.LunarDate = 11;
+            de56.Margin = new Padding(4, 3, 4, 3);
+            de56.Name = "de56";
+            de56.Size = new Size(100, 54);
+            de56.SolarDate = 11;
+            de56.TabIndex = 0;
+            de56.TabStop = false;
+            de56.ToolTip = "";
             // 
             // de55
             // 
-            this.de55.BackColor = System.Drawing.Color.Transparent;
-            this.de55.Location = new System.Drawing.Point(355, 314);
-            this.de55.LunarDate = 11;
-            this.de55.Name = "de55";
-            this.de55.Size = new System.Drawing.Size(82, 55);
-            this.de55.SolarDate = 11;
-            this.de55.TabIndex = 15;
-            this.de55.TabStop = false;
-            this.de55.ToolTip = "";
+            de55.BackColor = Color.Transparent;
+            de55.Dock = DockStyle.Fill;
+            de55.Location = new Point(436, 303);
+            de55.LunarDate = 11;
+            de55.Margin = new Padding(4, 3, 4, 3);
+            de55.Name = "de55";
+            de55.Size = new Size(100, 54);
+            de55.SolarDate = 11;
+            de55.TabIndex = 0;
+            de55.TabStop = false;
+            de55.ToolTip = "";
             // 
             // de54
             // 
-            this.de54.BackColor = System.Drawing.Color.Transparent;
-            this.de54.Location = new System.Drawing.Point(267, 314);
-            this.de54.LunarDate = 11;
-            this.de54.Name = "de54";
-            this.de54.Size = new System.Drawing.Size(82, 55);
-            this.de54.SolarDate = 11;
-            this.de54.TabIndex = 16;
-            this.de54.TabStop = false;
-            this.de54.ToolTip = "";
+            de54.BackColor = Color.Transparent;
+            de54.Dock = DockStyle.Fill;
+            de54.Location = new Point(328, 303);
+            de54.LunarDate = 11;
+            de54.Margin = new Padding(4, 3, 4, 3);
+            de54.Name = "de54";
+            de54.Size = new Size(100, 54);
+            de54.SolarDate = 11;
+            de54.TabIndex = 0;
+            de54.TabStop = false;
+            de54.ToolTip = "";
             // 
             // de53
             // 
-            this.de53.BackColor = System.Drawing.Color.Transparent;
-            this.de53.Location = new System.Drawing.Point(179, 314);
-            this.de53.LunarDate = 11;
-            this.de53.Name = "de53";
-            this.de53.Size = new System.Drawing.Size(82, 55);
-            this.de53.SolarDate = 11;
-            this.de53.TabIndex = 17;
-            this.de53.TabStop = false;
-            this.de53.ToolTip = "";
+            de53.BackColor = Color.Transparent;
+            de53.Dock = DockStyle.Fill;
+            de53.Location = new Point(220, 303);
+            de53.LunarDate = 11;
+            de53.Margin = new Padding(4, 3, 4, 3);
+            de53.Name = "de53";
+            de53.Size = new Size(100, 54);
+            de53.SolarDate = 11;
+            de53.TabIndex = 0;
+            de53.TabStop = false;
+            de53.ToolTip = "";
             // 
             // de52
             // 
-            this.de52.BackColor = System.Drawing.Color.Transparent;
-            this.de52.Location = new System.Drawing.Point(91, 314);
-            this.de52.LunarDate = 11;
-            this.de52.Name = "de52";
-            this.de52.Size = new System.Drawing.Size(82, 55);
-            this.de52.SolarDate = 11;
-            this.de52.TabIndex = 18;
-            this.de52.TabStop = false;
-            this.de52.ToolTip = "";
+            de52.BackColor = Color.Transparent;
+            de52.Dock = DockStyle.Fill;
+            de52.Location = new Point(112, 303);
+            de52.LunarDate = 11;
+            de52.Margin = new Padding(4, 3, 4, 3);
+            de52.Name = "de52";
+            de52.Size = new Size(100, 54);
+            de52.SolarDate = 11;
+            de52.TabIndex = 0;
+            de52.TabStop = false;
+            de52.ToolTip = "";
             // 
             // de51
             // 
-            this.de51.BackColor = System.Drawing.Color.Transparent;
-            this.de51.ForeColor = System.Drawing.Color.Red;
-            this.de51.Location = new System.Drawing.Point(3, 314);
-            this.de51.LunarDate = 11;
-            this.de51.Name = "de51";
-            this.de51.Size = new System.Drawing.Size(82, 55);
-            this.de51.SolarDate = 11;
-            this.de51.TabIndex = 31;
-            this.de51.TabStop = false;
-            this.de51.ToolTip = "";
+            de51.BackColor = Color.Transparent;
+            de51.Dock = DockStyle.Fill;
+            de51.ForeColor = Color.Red;
+            de51.Location = new Point(4, 303);
+            de51.LunarDate = 11;
+            de51.Margin = new Padding(4, 3, 4, 3);
+            de51.Name = "de51";
+            de51.Size = new Size(100, 54);
+            de51.SolarDate = 11;
+            de51.TabIndex = 0;
+            de51.TabStop = false;
+            de51.ToolTip = "";
             // 
             // de11
             // 
-            this.de11.BackColor = System.Drawing.Color.Transparent;
-            this.de11.ForeColor = System.Drawing.Color.Red;
-            this.de11.Location = new System.Drawing.Point(3, 70);
-            this.de11.LunarDate = 11;
-            this.de11.Name = "de11";
-            this.de11.Size = new System.Drawing.Size(82, 55);
-            this.de11.SolarDate = 11;
-            this.de11.TabIndex = 42;
-            this.de11.TabStop = false;
-            this.de11.ToolTip = "";
+            de11.BackColor = Color.Transparent;
+            de11.Dock = DockStyle.Fill;
+            de11.ForeColor = Color.Red;
+            de11.Location = new Point(4, 63);
+            de11.LunarDate = 11;
+            de11.Margin = new Padding(4, 3, 4, 3);
+            de11.Name = "de11";
+            de11.Size = new Size(100, 54);
+            de11.SolarDate = 11;
+            de11.TabIndex = 0;
+            de11.TabStop = false;
+            de11.ToolTip = "";
+            // 
+            // tableLayoutPanel
+            // 
+            tableLayoutPanel.ColumnCount = 7;
+            tableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 14.2857141F));
+            tableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 14.2857141F));
+            tableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 14.2857141F));
+            tableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 14.2857141F));
+            tableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 14.2857141F));
+            tableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 14.2857141F));
+            tableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 14.2857141F));
+            tableLayoutPanel.Controls.Add(sundayLabel, 0, 0);
+            tableLayoutPanel.Controls.Add(de67, 6, 6);
+            tableLayoutPanel.Controls.Add(de65, 4, 6);
+            tableLayoutPanel.Controls.Add(de66, 5, 6);
+            tableLayoutPanel.Controls.Add(de61, 0, 6);
+            tableLayoutPanel.Controls.Add(mondayLabel, 1, 0);
+            tableLayoutPanel.Controls.Add(de64, 3, 6);
+            tableLayoutPanel.Controls.Add(tuesdayLabel, 2, 0);
+            tableLayoutPanel.Controls.Add(de63, 2, 6);
+            tableLayoutPanel.Controls.Add(wednesdayLabel, 3, 0);
+            tableLayoutPanel.Controls.Add(thursdayLabel, 4, 0);
+            tableLayoutPanel.Controls.Add(de62, 1, 6);
+            tableLayoutPanel.Controls.Add(fridayLabel, 5, 0);
+            tableLayoutPanel.Controls.Add(saturdayLabel, 6, 0);
+            tableLayoutPanel.Controls.Add(de11, 0, 1);
+            tableLayoutPanel.Controls.Add(de57, 6, 5);
+            tableLayoutPanel.Controls.Add(de47, 6, 4);
+            tableLayoutPanel.Controls.Add(de56, 5, 5);
+            tableLayoutPanel.Controls.Add(de46, 5, 4);
+            tableLayoutPanel.Controls.Add(de55, 4, 5);
+            tableLayoutPanel.Controls.Add(de45, 4, 4);
+            tableLayoutPanel.Controls.Add(de54, 3, 5);
+            tableLayoutPanel.Controls.Add(de44, 3, 4);
+            tableLayoutPanel.Controls.Add(de53, 2, 5);
+            tableLayoutPanel.Controls.Add(de43, 2, 4);
+            tableLayoutPanel.Controls.Add(de52, 1, 5);
+            tableLayoutPanel.Controls.Add(de42, 1, 4);
+            tableLayoutPanel.Controls.Add(de51, 0, 5);
+            tableLayoutPanel.Controls.Add(de41, 0, 4);
+            tableLayoutPanel.Controls.Add(de37, 6, 3);
+            tableLayoutPanel.Controls.Add(de27, 6, 2);
+            tableLayoutPanel.Controls.Add(de36, 5, 3);
+            tableLayoutPanel.Controls.Add(de17, 6, 1);
+            tableLayoutPanel.Controls.Add(de34, 3, 3);
+            tableLayoutPanel.Controls.Add(de26, 5, 2);
+            tableLayoutPanel.Controls.Add(de33, 2, 3);
+            tableLayoutPanel.Controls.Add(de25, 4, 2);
+            tableLayoutPanel.Controls.Add(de35, 4, 3);
+            tableLayoutPanel.Controls.Add(de32, 1, 3);
+            tableLayoutPanel.Controls.Add(de24, 3, 2);
+            tableLayoutPanel.Controls.Add(de31, 0, 3);
+            tableLayoutPanel.Controls.Add(de23, 2, 2);
+            tableLayoutPanel.Controls.Add(de22, 1, 2);
+            tableLayoutPanel.Controls.Add(de21, 0, 2);
+            tableLayoutPanel.Controls.Add(de16, 5, 1);
+            tableLayoutPanel.Controls.Add(de15, 4, 1);
+            tableLayoutPanel.Controls.Add(de14, 3, 1);
+            tableLayoutPanel.Controls.Add(de13, 2, 1);
+            tableLayoutPanel.Controls.Add(de12, 1, 1);
+            tableLayoutPanel.Dock = DockStyle.Fill;
+            tableLayoutPanel.Location = new Point(0, 0);
+            tableLayoutPanel.Name = "tableLayoutPanel";
+            tableLayoutPanel.RowCount = 7;
+            tableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Percent, 14.2857141F));
+            tableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Percent, 14.2857141F));
+            tableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Percent, 14.2857141F));
+            tableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Percent, 14.2857141F));
+            tableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Percent, 14.2857141F));
+            tableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Percent, 14.2857141F));
+            tableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Percent, 14.2857141F));
+            tableLayoutPanel.Size = new Size(758, 420);
+            tableLayoutPanel.TabIndex = 0;
             // 
             // LunarMonthCalendar
             // 
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.BackgroundImage = global::LunarCalendar.Properties.Resources.index;
-            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Controls.Add(this.de61);
-            this.Controls.Add(this.de65);
-            this.Controls.Add(this.de67);
-            this.Controls.Add(this.de64);
-            this.Controls.Add(this.de63);
-            this.Controls.Add(this.de66);
-            this.Controls.Add(this.de62);
-            this.Controls.Add(this.de12);
-            this.Controls.Add(this.de13);
-            this.Controls.Add(this.de14);
-            this.Controls.Add(this.de15);
-            this.Controls.Add(this.de16);
-            this.Controls.Add(this.de17);
-            this.Controls.Add(this.de27);
-            this.Controls.Add(this.de21);
-            this.Controls.Add(this.de22);
-            this.Controls.Add(this.de23);
-            this.Controls.Add(this.de24);
-            this.Controls.Add(this.de25);
-            this.Controls.Add(this.de26);
-            this.Controls.Add(this.de37);
-            this.Controls.Add(this.de36);
-            this.Controls.Add(this.de34);
-            this.Controls.Add(this.de33);
-            this.Controls.Add(this.de32);
-            this.Controls.Add(this.de31);
-            this.Controls.Add(this.de41);
-            this.Controls.Add(this.de42);
-            this.Controls.Add(this.de43);
-            this.Controls.Add(this.de44);
-            this.Controls.Add(this.de35);
-            this.Controls.Add(this.de45);
-            this.Controls.Add(this.de46);
-            this.Controls.Add(this.de47);
-            this.Controls.Add(this.de57);
-            this.Controls.Add(this.de56);
-            this.Controls.Add(this.de55);
-            this.Controls.Add(this.de54);
-            this.Controls.Add(this.de53);
-            this.Controls.Add(this.de52);
-            this.Controls.Add(this.de51);
-            this.Controls.Add(this.de11);
-            this.Controls.Add(this.lblMonday);
-            this.Controls.Add(this.lblSaturday);
-            this.Controls.Add(this.lblFriday);
-            this.Controls.Add(this.lblThursday);
-            this.Controls.Add(this.lblWednesday);
-            this.Controls.Add(this.lblTuesday);
-            this.Controls.Add(this.lblSunday);
-            this.DoubleBuffered = true;
-            this.Name = "LunarMonthCalendar";
-            this.Size = new System.Drawing.Size(620, 437);
-            this.ResumeLayout(false);
-
+            AutoScaleMode = AutoScaleMode.None;
+            BackgroundImage = Properties.Resources.index;
+            BackgroundImageLayout = ImageLayout.Stretch;
+            Controls.Add(tableLayoutPanel);
+            DoubleBuffered = true;
+            Name = "LunarMonthCalendar";
+            Size = new Size(758, 420);
+            tableLayoutPanel.ResumeLayout(false);
+            ResumeLayout(false);
         }
 
         #endregion
-        private System.Windows.Forms.Label lblSunday;
-        private System.Windows.Forms.Label lblMonday;
-        private System.Windows.Forms.Label lblTuesday;
-        private System.Windows.Forms.Label lblWednesday;
-        private System.Windows.Forms.Label lblThursday;
-        private System.Windows.Forms.Label lblFriday;
-        private System.Windows.Forms.Label lblSaturday;
-        private System.Windows.Forms.ToolTip toolTip1;
+        private Label sundayLabel;
+        private Label mondayLabel;
+        private Label tuesdayLabel;
+        private Label wednesdayLabel;
+        private Label thursdayLabel;
+        private Label fridayLabel;
+        private Label saturdayLabel;
+        private ToolTip toolTip1;
         private DateEntry de61;
         private DateEntry de65;
         private DateEntry de67;
@@ -788,5 +906,6 @@
         private DateEntry de52;
         private DateEntry de51;
         private DateEntry de11;
+        private TableLayoutPanel tableLayoutPanel;
     }
 }

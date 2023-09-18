@@ -28,519 +28,564 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
-            this.tabControlMain = new System.Windows.Forms.TabControl();
-            this.tabDayCalendar = new System.Windows.Forms.TabPage();
-            this.pnlDayCalendar_Control = new System.Windows.Forms.Panel();
-            this.lblDayCalendar_Error = new System.Windows.Forms.Label();
-            this.btnDayCalendar_Today = new System.Windows.Forms.Button();
-            this.btnDayCalendar_NextDate = new System.Windows.Forms.Button();
-            this.btnDayCalendar_PreviousDate = new System.Windows.Forms.Button();
-            this.cmbDayCalendar_Lunar_Day = new System.Windows.Forms.ComboBox();
-            this.cmbDayCalendar_Solar_Day = new System.Windows.Forms.ComboBox();
-            this.lblDayCalendar_Lunar_Year = new System.Windows.Forms.Label();
-            this.lblDayCalendar_Solar_Year = new System.Windows.Forms.Label();
-            this.cmbDayCalendar_Lunar_Month = new System.Windows.Forms.ComboBox();
-            this.cmbDayCalendar_Solar_Month = new System.Windows.Forms.ComboBox();
-            this.lblDayCalendar_Lunar_Month = new System.Windows.Forms.Label();
-            this.lblDayCalendar_Solar_Month = new System.Windows.Forms.Label();
-            this.lblDayCalendar_Lunar_Day = new System.Windows.Forms.Label();
-            this.lblLunarDayCalendar_Solar_Day = new System.Windows.Forms.Label();
-            this.txtDayCalendar_Lunar_Year = new System.Windows.Forms.TextBox();
-            this.txtDayCalendar_Solar_Year = new System.Windows.Forms.TextBox();
-            this.rdbDayCalendar_Lunar = new System.Windows.Forms.RadioButton();
-            this.rdbDayCalendar_Solar = new System.Windows.Forms.RadioButton();
-            this.cldLunarDayCalendar = new LunarCalendar.LunarDayCalendar();
-            this.tabMonthCalendar = new System.Windows.Forms.TabPage();
-            this.cldLunarMonthCalendar = new LunarCalendar.LunarMonthCalendar();
-            this.pnlLunarMonthCalendar_Control = new System.Windows.Forms.Panel();
-            this.txtMonthCalendar_Year = new System.Windows.Forms.TextBox();
-            this.lblMonthCalendar_Year = new System.Windows.Forms.Label();
-            this.btnMonthCalendar_Today = new System.Windows.Forms.Button();
-            this.cmbMonthCalendar_Month = new System.Windows.Forms.ComboBox();
-            this.btnMonthCalendar_NextMonth = new System.Windows.Forms.Button();
-            this.btnMonthCalendar_PreviousMonth = new System.Windows.Forms.Button();
-            this.lblMonthCalendar_Month = new System.Windows.Forms.Label();
-            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.tabControlMain.SuspendLayout();
-            this.tabDayCalendar.SuspendLayout();
-            this.pnlDayCalendar_Control.SuspendLayout();
-            this.tabMonthCalendar.SuspendLayout();
-            this.pnlLunarMonthCalendar_Control.SuspendLayout();
-            this.SuspendLayout();
-            // 
-            // tabControlMain
-            // 
-            this.tabControlMain.Controls.Add(this.tabDayCalendar);
-            this.tabControlMain.Controls.Add(this.tabMonthCalendar);
-            this.tabControlMain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControlMain.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabControlMain.Location = new System.Drawing.Point(0, 0);
-            this.tabControlMain.Multiline = true;
-            this.tabControlMain.Name = "tabControlMain";
-            this.tabControlMain.SelectedIndex = 0;
-            this.tabControlMain.Size = new System.Drawing.Size(634, 551);
-            this.tabControlMain.TabIndex = 6;
-            // 
-            // tabDayCalendar
-            // 
-            this.tabDayCalendar.Controls.Add(this.pnlDayCalendar_Control);
-            this.tabDayCalendar.Controls.Add(this.cldLunarDayCalendar);
-            this.tabDayCalendar.Location = new System.Drawing.Point(4, 29);
-            this.tabDayCalendar.Name = "tabDayCalendar";
-            this.tabDayCalendar.Padding = new System.Windows.Forms.Padding(3);
-            this.tabDayCalendar.Size = new System.Drawing.Size(626, 518);
-            this.tabDayCalendar.TabIndex = 0;
-            this.tabDayCalendar.Text = "Lịch ngày";
-            this.tabDayCalendar.UseVisualStyleBackColor = true;
-            // 
-            // pnlDayCalendar_Control
-            // 
-            this.pnlDayCalendar_Control.Controls.Add(this.lblDayCalendar_Error);
-            this.pnlDayCalendar_Control.Controls.Add(this.btnDayCalendar_Today);
-            this.pnlDayCalendar_Control.Controls.Add(this.btnDayCalendar_NextDate);
-            this.pnlDayCalendar_Control.Controls.Add(this.btnDayCalendar_PreviousDate);
-            this.pnlDayCalendar_Control.Controls.Add(this.cmbDayCalendar_Lunar_Day);
-            this.pnlDayCalendar_Control.Controls.Add(this.cmbDayCalendar_Solar_Day);
-            this.pnlDayCalendar_Control.Controls.Add(this.lblDayCalendar_Lunar_Year);
-            this.pnlDayCalendar_Control.Controls.Add(this.lblDayCalendar_Solar_Year);
-            this.pnlDayCalendar_Control.Controls.Add(this.cmbDayCalendar_Lunar_Month);
-            this.pnlDayCalendar_Control.Controls.Add(this.cmbDayCalendar_Solar_Month);
-            this.pnlDayCalendar_Control.Controls.Add(this.lblDayCalendar_Lunar_Month);
-            this.pnlDayCalendar_Control.Controls.Add(this.lblDayCalendar_Solar_Month);
-            this.pnlDayCalendar_Control.Controls.Add(this.lblDayCalendar_Lunar_Day);
-            this.pnlDayCalendar_Control.Controls.Add(this.lblLunarDayCalendar_Solar_Day);
-            this.pnlDayCalendar_Control.Controls.Add(this.txtDayCalendar_Lunar_Year);
-            this.pnlDayCalendar_Control.Controls.Add(this.txtDayCalendar_Solar_Year);
-            this.pnlDayCalendar_Control.Controls.Add(this.rdbDayCalendar_Lunar);
-            this.pnlDayCalendar_Control.Controls.Add(this.rdbDayCalendar_Solar);
-            this.pnlDayCalendar_Control.Location = new System.Drawing.Point(8, 6);
-            this.pnlDayCalendar_Control.Name = "pnlDayCalendar_Control";
-            this.pnlDayCalendar_Control.Size = new System.Drawing.Size(231, 500);
-            this.pnlDayCalendar_Control.TabIndex = 0;
-            // 
-            // lblDayCalendar_Error
-            // 
-            this.lblDayCalendar_Error.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.lblDayCalendar_Error.ForeColor = System.Drawing.Color.Red;
-            this.lblDayCalendar_Error.Location = new System.Drawing.Point(0, 450);
-            this.lblDayCalendar_Error.Name = "lblDayCalendar_Error";
-            this.lblDayCalendar_Error.Size = new System.Drawing.Size(231, 50);
-            this.lblDayCalendar_Error.TabIndex = 0;
-            this.lblDayCalendar_Error.Text = "Lỗi:";
-            this.lblDayCalendar_Error.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblDayCalendar_Error.Visible = false;
-            // 
-            // btnDayCalendar_Today
-            // 
-            this.btnDayCalendar_Today.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnDayCalendar_Today.Location = new System.Drawing.Point(34, 405);
-            this.btnDayCalendar_Today.Name = "btnDayCalendar_Today";
-            this.btnDayCalendar_Today.Size = new System.Drawing.Size(156, 30);
-            this.btnDayCalendar_Today.TabIndex = 10;
-            this.btnDayCalendar_Today.Text = "Hôm nay";
-            this.btnDayCalendar_Today.UseVisualStyleBackColor = true;
-            this.btnDayCalendar_Today.Click += new System.EventHandler(this.btnDayCalendar_Today_Click);
-            // 
-            // btnDayCalendar_NextDate
-            // 
-            this.btnDayCalendar_NextDate.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnDayCalendar_NextDate.Location = new System.Drawing.Point(115, 369);
-            this.btnDayCalendar_NextDate.Name = "btnDayCalendar_NextDate";
-            this.btnDayCalendar_NextDate.Size = new System.Drawing.Size(75, 30);
-            this.btnDayCalendar_NextDate.TabIndex = 9;
-            this.btnDayCalendar_NextDate.Text = "→";
-            this.toolTip1.SetToolTip(this.btnDayCalendar_NextDate, "Ngày sau");
-            this.btnDayCalendar_NextDate.UseVisualStyleBackColor = true;
-            this.btnDayCalendar_NextDate.Click += new System.EventHandler(this.btnDayCalendar_NextDate_Click);
-            // 
-            // btnDayCalendar_PreviousDate
-            // 
-            this.btnDayCalendar_PreviousDate.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnDayCalendar_PreviousDate.Location = new System.Drawing.Point(34, 369);
-            this.btnDayCalendar_PreviousDate.Name = "btnDayCalendar_PreviousDate";
-            this.btnDayCalendar_PreviousDate.Size = new System.Drawing.Size(75, 30);
-            this.btnDayCalendar_PreviousDate.TabIndex = 8;
-            this.btnDayCalendar_PreviousDate.Text = "←";
-            this.toolTip1.SetToolTip(this.btnDayCalendar_PreviousDate, "Ngày trước");
-            this.btnDayCalendar_PreviousDate.UseVisualStyleBackColor = true;
-            this.btnDayCalendar_PreviousDate.Click += new System.EventHandler(this.btnDayCalendar_PreviousDate_Click);
-            // 
-            // cmbDayCalendar_Lunar_Day
-            // 
-            this.cmbDayCalendar_Lunar_Day.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.cmbDayCalendar_Lunar_Day.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbDayCalendar_Lunar_Day.Enabled = false;
-            this.cmbDayCalendar_Lunar_Day.FormattingEnabled = true;
-            this.cmbDayCalendar_Lunar_Day.Location = new System.Drawing.Point(90, 292);
-            this.cmbDayCalendar_Lunar_Day.Name = "cmbDayCalendar_Lunar_Day";
-            this.cmbDayCalendar_Lunar_Day.Size = new System.Drawing.Size(100, 28);
-            this.cmbDayCalendar_Lunar_Day.Sorted = true;
-            this.cmbDayCalendar_Lunar_Day.TabIndex = 7;
-            this.cmbDayCalendar_Lunar_Day.SelectedIndexChanged += new System.EventHandler(this.cmbDayCalendar_Lunar_Day_SelectedIndexChanged);
-            this.cmbDayCalendar_Lunar_Day.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtLunarCalendar_KeyPress);
-            // 
-            // cmbDayCalendar_Solar_Day
-            // 
-            this.cmbDayCalendar_Solar_Day.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.cmbDayCalendar_Solar_Day.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbDayCalendar_Solar_Day.FormattingEnabled = true;
-            this.cmbDayCalendar_Solar_Day.Location = new System.Drawing.Point(90, 113);
-            this.cmbDayCalendar_Solar_Day.Name = "cmbDayCalendar_Solar_Day";
-            this.cmbDayCalendar_Solar_Day.Size = new System.Drawing.Size(100, 28);
-            this.cmbDayCalendar_Solar_Day.Sorted = true;
-            this.cmbDayCalendar_Solar_Day.TabIndex = 3;
-            this.cmbDayCalendar_Solar_Day.SelectedIndexChanged += new System.EventHandler(this.cmbDayCalendar_Solar_Day_SelectedIndexChanged);
-            this.cmbDayCalendar_Solar_Day.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtLunarCalendar_KeyPress);
-            // 
-            // lblDayCalendar_Lunar_Year
-            // 
-            this.lblDayCalendar_Lunar_Year.AutoSize = true;
-            this.lblDayCalendar_Lunar_Year.Location = new System.Drawing.Point(42, 228);
-            this.lblDayCalendar_Lunar_Year.Name = "lblDayCalendar_Lunar_Year";
-            this.lblDayCalendar_Lunar_Year.Size = new System.Drawing.Size(42, 20);
-            this.lblDayCalendar_Lunar_Year.TabIndex = 0;
-            this.lblDayCalendar_Lunar_Year.Text = "Năm";
-            // 
-            // lblDayCalendar_Solar_Year
-            // 
-            this.lblDayCalendar_Solar_Year.AutoSize = true;
-            this.lblDayCalendar_Solar_Year.Location = new System.Drawing.Point(42, 49);
-            this.lblDayCalendar_Solar_Year.Name = "lblDayCalendar_Solar_Year";
-            this.lblDayCalendar_Solar_Year.Size = new System.Drawing.Size(42, 20);
-            this.lblDayCalendar_Solar_Year.TabIndex = 0;
-            this.lblDayCalendar_Solar_Year.Text = "Năm";
-            // 
-            // cmbDayCalendar_Lunar_Month
-            // 
-            this.cmbDayCalendar_Lunar_Month.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.cmbDayCalendar_Lunar_Month.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbDayCalendar_Lunar_Month.Enabled = false;
-            this.cmbDayCalendar_Lunar_Month.FormattingEnabled = true;
-            this.cmbDayCalendar_Lunar_Month.Location = new System.Drawing.Point(90, 258);
-            this.cmbDayCalendar_Lunar_Month.Name = "cmbDayCalendar_Lunar_Month";
-            this.cmbDayCalendar_Lunar_Month.Size = new System.Drawing.Size(100, 28);
-            this.cmbDayCalendar_Lunar_Month.Sorted = true;
-            this.cmbDayCalendar_Lunar_Month.TabIndex = 6;
-            this.cmbDayCalendar_Lunar_Month.SelectedIndexChanged += new System.EventHandler(this.cmbDayCalendar_Lunar_Month_SelectedIndexChanged);
-            this.cmbDayCalendar_Lunar_Month.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtLunarCalendar_KeyPress);
-            // 
-            // cmbDayCalendar_Solar_Month
-            // 
-            this.cmbDayCalendar_Solar_Month.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.cmbDayCalendar_Solar_Month.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbDayCalendar_Solar_Month.FormattingEnabled = true;
-            this.cmbDayCalendar_Solar_Month.Items.AddRange(new object[] {
-            "01",
-            "02",
-            "03",
-            "04",
-            "05",
-            "06",
-            "07",
-            "08",
-            "09",
-            "10",
-            "11",
-            "12"});
-            this.cmbDayCalendar_Solar_Month.Location = new System.Drawing.Point(90, 79);
-            this.cmbDayCalendar_Solar_Month.Name = "cmbDayCalendar_Solar_Month";
-            this.cmbDayCalendar_Solar_Month.Size = new System.Drawing.Size(100, 28);
-            this.cmbDayCalendar_Solar_Month.Sorted = true;
-            this.cmbDayCalendar_Solar_Month.TabIndex = 2;
-            this.cmbDayCalendar_Solar_Month.SelectedIndexChanged += new System.EventHandler(this.cmbDayCalendar_Solar_Month_SelectedIndexChanged);
-            this.cmbDayCalendar_Solar_Month.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtLunarCalendar_KeyPress);
-            // 
-            // lblDayCalendar_Lunar_Month
-            // 
-            this.lblDayCalendar_Lunar_Month.AutoSize = true;
-            this.lblDayCalendar_Lunar_Month.Location = new System.Drawing.Point(30, 261);
-            this.lblDayCalendar_Lunar_Month.Name = "lblDayCalendar_Lunar_Month";
-            this.lblDayCalendar_Lunar_Month.Size = new System.Drawing.Size(54, 20);
-            this.lblDayCalendar_Lunar_Month.TabIndex = 0;
-            this.lblDayCalendar_Lunar_Month.Text = "Tháng";
-            // 
-            // lblDayCalendar_Solar_Month
-            // 
-            this.lblDayCalendar_Solar_Month.AutoSize = true;
-            this.lblDayCalendar_Solar_Month.Location = new System.Drawing.Point(30, 82);
-            this.lblDayCalendar_Solar_Month.Name = "lblDayCalendar_Solar_Month";
-            this.lblDayCalendar_Solar_Month.Size = new System.Drawing.Size(54, 20);
-            this.lblDayCalendar_Solar_Month.TabIndex = 0;
-            this.lblDayCalendar_Solar_Month.Text = "Tháng";
-            // 
-            // lblDayCalendar_Lunar_Day
-            // 
-            this.lblDayCalendar_Lunar_Day.AutoSize = true;
-            this.lblDayCalendar_Lunar_Day.Location = new System.Drawing.Point(39, 295);
-            this.lblDayCalendar_Lunar_Day.Name = "lblDayCalendar_Lunar_Day";
-            this.lblDayCalendar_Lunar_Day.Size = new System.Drawing.Size(45, 20);
-            this.lblDayCalendar_Lunar_Day.TabIndex = 0;
-            this.lblDayCalendar_Lunar_Day.Text = "Ngày";
-            // 
-            // lblLunarDayCalendar_Solar_Day
-            // 
-            this.lblLunarDayCalendar_Solar_Day.AutoSize = true;
-            this.lblLunarDayCalendar_Solar_Day.Location = new System.Drawing.Point(39, 116);
-            this.lblLunarDayCalendar_Solar_Day.Name = "lblLunarDayCalendar_Solar_Day";
-            this.lblLunarDayCalendar_Solar_Day.Size = new System.Drawing.Size(45, 20);
-            this.lblLunarDayCalendar_Solar_Day.TabIndex = 0;
-            this.lblLunarDayCalendar_Solar_Day.Text = "Ngày";
-            // 
-            // txtDayCalendar_Lunar_Year
-            // 
-            this.txtDayCalendar_Lunar_Year.Enabled = false;
-            this.txtDayCalendar_Lunar_Year.Location = new System.Drawing.Point(90, 225);
-            this.txtDayCalendar_Lunar_Year.MaxLength = 4;
-            this.txtDayCalendar_Lunar_Year.Name = "txtDayCalendar_Lunar_Year";
-            this.txtDayCalendar_Lunar_Year.Size = new System.Drawing.Size(100, 26);
-            this.txtDayCalendar_Lunar_Year.TabIndex = 5;
-            this.txtDayCalendar_Lunar_Year.Text = "2016";
-            this.txtDayCalendar_Lunar_Year.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtDayCalendar_Year_KeyDown);
-            this.txtDayCalendar_Lunar_Year.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtLunarCalendar_KeyPress);
-            this.txtDayCalendar_Lunar_Year.Validating += new System.ComponentModel.CancelEventHandler(this.txtDayCalendar_Lunar_Year_Validating);
-            this.txtDayCalendar_Lunar_Year.Validated += new System.EventHandler(this.txtDayCalendar_Lunar_Year_Validated);
-            // 
-            // txtDayCalendar_Solar_Year
-            // 
-            this.txtDayCalendar_Solar_Year.Location = new System.Drawing.Point(90, 46);
-            this.txtDayCalendar_Solar_Year.MaxLength = 4;
-            this.txtDayCalendar_Solar_Year.Name = "txtDayCalendar_Solar_Year";
-            this.txtDayCalendar_Solar_Year.Size = new System.Drawing.Size(100, 26);
-            this.txtDayCalendar_Solar_Year.TabIndex = 1;
-            this.txtDayCalendar_Solar_Year.Text = "2016";
-            this.txtDayCalendar_Solar_Year.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtDayCalendar_Year_KeyDown);
-            this.txtDayCalendar_Solar_Year.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtLunarCalendar_KeyPress);
-            this.txtDayCalendar_Solar_Year.Validating += new System.ComponentModel.CancelEventHandler(this.txtDayCalendar_Solar_Year_Validating);
-            this.txtDayCalendar_Solar_Year.Validated += new System.EventHandler(this.txtDayCalendar_Solar_Year_Validated);
-            // 
-            // rdbDayCalendar_Lunar
-            // 
-            this.rdbDayCalendar_Lunar.AutoSize = true;
-            this.rdbDayCalendar_Lunar.Location = new System.Drawing.Point(20, 194);
-            this.rdbDayCalendar_Lunar.Name = "rdbDayCalendar_Lunar";
-            this.rdbDayCalendar_Lunar.Size = new System.Drawing.Size(78, 24);
-            this.rdbDayCalendar_Lunar.TabIndex = 4;
-            this.rdbDayCalendar_Lunar.TabStop = true;
-            this.rdbDayCalendar_Lunar.Text = "Âm lịch";
-            this.rdbDayCalendar_Lunar.UseVisualStyleBackColor = true;
-            this.rdbDayCalendar_Lunar.CheckedChanged += new System.EventHandler(this.rdbDayCalendar_CheckedChanged);
-            // 
-            // rdbDayCalendar_Solar
-            // 
-            this.rdbDayCalendar_Solar.AutoSize = true;
-            this.rdbDayCalendar_Solar.Checked = true;
-            this.rdbDayCalendar_Solar.Location = new System.Drawing.Point(20, 15);
-            this.rdbDayCalendar_Solar.Name = "rdbDayCalendar_Solar";
-            this.rdbDayCalendar_Solar.Size = new System.Drawing.Size(102, 24);
-            this.rdbDayCalendar_Solar.TabIndex = 0;
-            this.rdbDayCalendar_Solar.TabStop = true;
-            this.rdbDayCalendar_Solar.Text = "Dương lịch";
-            this.rdbDayCalendar_Solar.UseVisualStyleBackColor = true;
-            this.rdbDayCalendar_Solar.CheckedChanged += new System.EventHandler(this.rdbDayCalendar_CheckedChanged);
-            // 
-            // cldLunarDayCalendar
-            // 
-            this.cldLunarDayCalendar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("cldLunarDayCalendar.BackgroundImage")));
-            this.cldLunarDayCalendar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.cldLunarDayCalendar.Location = new System.Drawing.Point(245, 6);
-            this.cldLunarDayCalendar.Name = "cldLunarDayCalendar";
-            this.cldLunarDayCalendar.SelectedDate = new System.DateTime(2017, 3, 9, 0, 0, 0, 0);
-            this.cldLunarDayCalendar.Size = new System.Drawing.Size(375, 500);
-            this.cldLunarDayCalendar.TabIndex = 1;
-            this.cldLunarDayCalendar.SelectedDateChanged += new LunarCalendar.LunarDayCalendar.SelectedDateChangedEventHandler(this.cldLunarDayCalendar_SelectedDateChanged);
-            // 
-            // tabMonthCalendar
-            // 
-            this.tabMonthCalendar.Controls.Add(this.cldLunarMonthCalendar);
-            this.tabMonthCalendar.Controls.Add(this.pnlLunarMonthCalendar_Control);
-            this.tabMonthCalendar.Location = new System.Drawing.Point(4, 29);
-            this.tabMonthCalendar.Name = "tabMonthCalendar";
-            this.tabMonthCalendar.Padding = new System.Windows.Forms.Padding(3);
-            this.tabMonthCalendar.Size = new System.Drawing.Size(626, 518);
-            this.tabMonthCalendar.TabIndex = 1;
-            this.tabMonthCalendar.Text = "Lịch tháng";
-            this.tabMonthCalendar.UseVisualStyleBackColor = true;
-            // 
-            // cldLunarMonthCalendar
-            // 
-            this.cldLunarMonthCalendar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("cldLunarMonthCalendar.BackgroundImage")));
-            this.cldLunarMonthCalendar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.cldLunarMonthCalendar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cldLunarMonthCalendar.Location = new System.Drawing.Point(6, 74);
-            this.cldLunarMonthCalendar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.cldLunarMonthCalendar.Name = "cldLunarMonthCalendar";
-            this.cldLunarMonthCalendar.SelectedMonth = new System.DateTime(2016, 5, 15, 0, 0, 0, 0);
-            this.cldLunarMonthCalendar.Size = new System.Drawing.Size(620, 437);
-            this.cldLunarMonthCalendar.TabIndex = 1;
-            this.cldLunarMonthCalendar.SelectedMonthChanged += new LunarCalendar.LunarMonthCalendar.SelectedMonthChangedEventHandler(this.cldLunarMonthCalendar_SelectedMonthChanged);
-            // 
-            // pnlLunarMonthCalendar_Control
-            // 
-            this.pnlLunarMonthCalendar_Control.Controls.Add(this.txtMonthCalendar_Year);
-            this.pnlLunarMonthCalendar_Control.Controls.Add(this.lblMonthCalendar_Year);
-            this.pnlLunarMonthCalendar_Control.Controls.Add(this.btnMonthCalendar_Today);
-            this.pnlLunarMonthCalendar_Control.Controls.Add(this.cmbMonthCalendar_Month);
-            this.pnlLunarMonthCalendar_Control.Controls.Add(this.btnMonthCalendar_NextMonth);
-            this.pnlLunarMonthCalendar_Control.Controls.Add(this.btnMonthCalendar_PreviousMonth);
-            this.pnlLunarMonthCalendar_Control.Controls.Add(this.lblMonthCalendar_Month);
-            this.pnlLunarMonthCalendar_Control.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlLunarMonthCalendar_Control.Location = new System.Drawing.Point(3, 3);
-            this.pnlLunarMonthCalendar_Control.Name = "pnlLunarMonthCalendar_Control";
-            this.pnlLunarMonthCalendar_Control.Size = new System.Drawing.Size(620, 70);
-            this.pnlLunarMonthCalendar_Control.TabIndex = 0;
-            // 
-            // txtMonthCalendar_Year
-            // 
-            this.txtMonthCalendar_Year.Location = new System.Drawing.Point(71, 6);
-            this.txtMonthCalendar_Year.MaxLength = 4;
-            this.txtMonthCalendar_Year.Name = "txtMonthCalendar_Year";
-            this.txtMonthCalendar_Year.Size = new System.Drawing.Size(100, 26);
-            this.txtMonthCalendar_Year.TabIndex = 0;
-            this.txtMonthCalendar_Year.Text = "2016";
-            this.txtMonthCalendar_Year.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtMonthCalendar_Year_KeyDown);
-            this.txtMonthCalendar_Year.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtLunarCalendar_KeyPress);
-            this.txtMonthCalendar_Year.Validating += new System.ComponentModel.CancelEventHandler(this.txtMonthCalendar_Year_Validating);
-            this.txtMonthCalendar_Year.Validated += new System.EventHandler(this.txtMonthCalendar_Year_Validated);
-            // 
-            // lblMonthCalendar_Year
-            // 
-            this.lblMonthCalendar_Year.AutoSize = true;
-            this.lblMonthCalendar_Year.Location = new System.Drawing.Point(23, 9);
-            this.lblMonthCalendar_Year.Name = "lblMonthCalendar_Year";
-            this.lblMonthCalendar_Year.Size = new System.Drawing.Size(42, 20);
-            this.lblMonthCalendar_Year.TabIndex = 0;
-            this.lblMonthCalendar_Year.Text = "Năm";
-            // 
-            // btnMonthCalendar_Today
-            // 
-            this.btnMonthCalendar_Today.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMonthCalendar_Today.Location = new System.Drawing.Point(459, 37);
-            this.btnMonthCalendar_Today.Name = "btnMonthCalendar_Today";
-            this.btnMonthCalendar_Today.Size = new System.Drawing.Size(156, 30);
-            this.btnMonthCalendar_Today.TabIndex = 4;
-            this.btnMonthCalendar_Today.Text = "Hôm nay";
-            this.btnMonthCalendar_Today.UseVisualStyleBackColor = true;
-            this.btnMonthCalendar_Today.Click += new System.EventHandler(this.btnMonthCalendar_Today_Click);
-            // 
-            // cmbMonthCalendar_Month
-            // 
-            this.cmbMonthCalendar_Month.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.cmbMonthCalendar_Month.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbMonthCalendar_Month.FormattingEnabled = true;
-            this.cmbMonthCalendar_Month.Items.AddRange(new object[] {
-            "01",
-            "02",
-            "03",
-            "04",
-            "05",
-            "06",
-            "07",
-            "08",
-            "09",
-            "10",
-            "11",
-            "12"});
-            this.cmbMonthCalendar_Month.Location = new System.Drawing.Point(71, 35);
-            this.cmbMonthCalendar_Month.Name = "cmbMonthCalendar_Month";
-            this.cmbMonthCalendar_Month.Size = new System.Drawing.Size(100, 28);
-            this.cmbMonthCalendar_Month.Sorted = true;
-            this.cmbMonthCalendar_Month.TabIndex = 1;
-            this.cmbMonthCalendar_Month.SelectedIndexChanged += new System.EventHandler(this.cmbMonthCalendar_Month_SelectedIndexChanged);
-            // 
-            // btnMonthCalendar_NextMonth
-            // 
-            this.btnMonthCalendar_NextMonth.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMonthCalendar_NextMonth.Location = new System.Drawing.Point(540, 4);
-            this.btnMonthCalendar_NextMonth.Name = "btnMonthCalendar_NextMonth";
-            this.btnMonthCalendar_NextMonth.Size = new System.Drawing.Size(75, 30);
-            this.btnMonthCalendar_NextMonth.TabIndex = 3;
-            this.btnMonthCalendar_NextMonth.Text = "→";
-            this.toolTip1.SetToolTip(this.btnMonthCalendar_NextMonth, "Tháng sau");
-            this.btnMonthCalendar_NextMonth.UseVisualStyleBackColor = true;
-            this.btnMonthCalendar_NextMonth.Click += new System.EventHandler(this.btnMonthCalendar_NextMonth_Click);
-            // 
-            // btnMonthCalendar_PreviousMonth
-            // 
-            this.btnMonthCalendar_PreviousMonth.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMonthCalendar_PreviousMonth.Location = new System.Drawing.Point(459, 4);
-            this.btnMonthCalendar_PreviousMonth.Name = "btnMonthCalendar_PreviousMonth";
-            this.btnMonthCalendar_PreviousMonth.Size = new System.Drawing.Size(75, 30);
-            this.btnMonthCalendar_PreviousMonth.TabIndex = 2;
-            this.btnMonthCalendar_PreviousMonth.Text = "←";
-            this.toolTip1.SetToolTip(this.btnMonthCalendar_PreviousMonth, "Tháng trước");
-            this.btnMonthCalendar_PreviousMonth.UseVisualStyleBackColor = true;
-            this.btnMonthCalendar_PreviousMonth.Click += new System.EventHandler(this.btnMonthCalendar_PreviousMonth_Click);
-            // 
-            // lblMonthCalendar_Month
-            // 
-            this.lblMonthCalendar_Month.AutoSize = true;
-            this.lblMonthCalendar_Month.Location = new System.Drawing.Point(11, 38);
-            this.lblMonthCalendar_Month.Name = "lblMonthCalendar_Month";
-            this.lblMonthCalendar_Month.Size = new System.Drawing.Size(54, 20);
-            this.lblMonthCalendar_Month.TabIndex = 0;
-            this.lblMonthCalendar_Month.Text = "Tháng";
+            mainTabControl = new TabControl();
+            dayCalendarTabPage = new TabPage();
+            dayCalendarTableLayoutPanel = new TableLayoutPanel();
+            lunarDayCalendar = new LunarDayCalendar();
+            dayCalendarControlPanel = new Panel();
+            errorLabel = new Label();
+            todayButton = new Button();
+            nextDateButton = new Button();
+            previousDateButton = new Button();
+            lunarDayComboBox = new ComboBox();
+            solarDayComboBox = new ComboBox();
+            lunarYearLabel = new Label();
+            solarYearLabel = new Label();
+            lunarMonthComboBox = new ComboBox();
+            solarMonthComboBox = new ComboBox();
+            lunarMonthLabel = new Label();
+            solarMonthLabel = new Label();
+            lunarDayLabel = new Label();
+            solarDayLabel = new Label();
+            lunarYearTextBox = new TextBox();
+            solarYearTextBox = new TextBox();
+            lunarCalendarRadioButton = new RadioButton();
+            solarCalendarRadioButton = new RadioButton();
+            monthCalendarTabPage = new TabPage();
+            tableLayoutPanel2 = new TableLayoutPanel();
+            lunarMonthCalendar = new LunarMonthCalendar();
+            monthCalendarControlPanel = new Panel();
+            yearTextBox = new TextBox();
+            yearLabel = new Label();
+            thisMonthButton = new Button();
+            monthComboBox = new ComboBox();
+            nextMonthButton = new Button();
+            previousMonthButton = new Button();
+            monthLabel = new Label();
+            toolTip1 = new ToolTip(components);
+            mainTabControl.SuspendLayout();
+            dayCalendarTabPage.SuspendLayout();
+            dayCalendarTableLayoutPanel.SuspendLayout();
+            dayCalendarControlPanel.SuspendLayout();
+            monthCalendarTabPage.SuspendLayout();
+            tableLayoutPanel2.SuspendLayout();
+            monthCalendarControlPanel.SuspendLayout();
+            SuspendLayout();
+            // 
+            // mainTabControl
+            // 
+            mainTabControl.Controls.Add(dayCalendarTabPage);
+            mainTabControl.Controls.Add(monthCalendarTabPage);
+            mainTabControl.Dock = DockStyle.Fill;
+            mainTabControl.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            mainTabControl.Location = new Point(0, 0);
+            mainTabControl.Margin = new Padding(4, 3, 4, 3);
+            mainTabControl.Multiline = true;
+            mainTabControl.Name = "mainTabControl";
+            mainTabControl.SelectedIndex = 0;
+            mainTabControl.Size = new Size(784, 561);
+            mainTabControl.TabIndex = 6;
+            // 
+            // dayCalendarTabPage
+            // 
+            dayCalendarTabPage.Controls.Add(dayCalendarTableLayoutPanel);
+            dayCalendarTabPage.Location = new Point(4, 29);
+            dayCalendarTabPage.Margin = new Padding(4, 3, 4, 3);
+            dayCalendarTabPage.Name = "dayCalendarTabPage";
+            dayCalendarTabPage.Padding = new Padding(4, 3, 4, 3);
+            dayCalendarTabPage.Size = new Size(776, 528);
+            dayCalendarTabPage.TabIndex = 0;
+            dayCalendarTabPage.Text = "Lịch ngày";
+            dayCalendarTabPage.UseVisualStyleBackColor = true;
+            // 
+            // dayCalendarTableLayoutPanel
+            // 
+            dayCalendarTableLayoutPanel.ColumnCount = 2;
+            dayCalendarTableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 40F));
+            dayCalendarTableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 60F));
+            dayCalendarTableLayoutPanel.Controls.Add(dayCalendarControlPanel, 0, 0);
+            dayCalendarTableLayoutPanel.Controls.Add(lunarDayCalendar, 1, 0);
+            dayCalendarTableLayoutPanel.Dock = DockStyle.Fill;
+            dayCalendarTableLayoutPanel.Location = new Point(4, 3);
+            dayCalendarTableLayoutPanel.Name = "dayCalendarTableLayoutPanel";
+            dayCalendarTableLayoutPanel.RowCount = 1;
+            dayCalendarTableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            dayCalendarTableLayoutPanel.Size = new Size(768, 522);
+            dayCalendarTableLayoutPanel.TabIndex = 0;
+            // 
+            // lunarDayCalendar
+            // 
+            lunarDayCalendar.BackgroundImage = (Image)resources.GetObject("lunarDayCalendar.BackgroundImage");
+            lunarDayCalendar.BackgroundImageLayout = ImageLayout.Stretch;
+            lunarDayCalendar.Dock = DockStyle.Fill;
+            lunarDayCalendar.Location = new Point(311, 3);
+            lunarDayCalendar.Margin = new Padding(4, 3, 4, 3);
+            lunarDayCalendar.Name = "lunarDayCalendar";
+            lunarDayCalendar.SelectedDate = new DateTime(2017, 3, 9, 0, 0, 0, 0);
+            lunarDayCalendar.Size = new Size(453, 516);
+            lunarDayCalendar.TabIndex = 1;
+            lunarDayCalendar.SelectedDateChanged += LunarDayCalendar_SelectedDateChanged;
+            // 
+            // dayCalendarControlPanel
+            // 
+            dayCalendarControlPanel.Controls.Add(errorLabel);
+            dayCalendarControlPanel.Controls.Add(todayButton);
+            dayCalendarControlPanel.Controls.Add(nextDateButton);
+            dayCalendarControlPanel.Controls.Add(previousDateButton);
+            dayCalendarControlPanel.Controls.Add(lunarDayComboBox);
+            dayCalendarControlPanel.Controls.Add(solarDayComboBox);
+            dayCalendarControlPanel.Controls.Add(lunarYearLabel);
+            dayCalendarControlPanel.Controls.Add(solarYearLabel);
+            dayCalendarControlPanel.Controls.Add(lunarMonthComboBox);
+            dayCalendarControlPanel.Controls.Add(solarMonthComboBox);
+            dayCalendarControlPanel.Controls.Add(lunarMonthLabel);
+            dayCalendarControlPanel.Controls.Add(solarMonthLabel);
+            dayCalendarControlPanel.Controls.Add(lunarDayLabel);
+            dayCalendarControlPanel.Controls.Add(solarDayLabel);
+            dayCalendarControlPanel.Controls.Add(lunarYearTextBox);
+            dayCalendarControlPanel.Controls.Add(solarYearTextBox);
+            dayCalendarControlPanel.Controls.Add(lunarCalendarRadioButton);
+            dayCalendarControlPanel.Controls.Add(solarCalendarRadioButton);
+            dayCalendarControlPanel.Dock = DockStyle.Fill;
+            dayCalendarControlPanel.Location = new Point(4, 3);
+            dayCalendarControlPanel.Margin = new Padding(4, 3, 4, 3);
+            dayCalendarControlPanel.Name = "dayCalendarControlPanel";
+            dayCalendarControlPanel.Size = new Size(299, 516);
+            dayCalendarControlPanel.TabIndex = 0;
+            // 
+            // errorLabel
+            // 
+            errorLabel.Dock = DockStyle.Bottom;
+            errorLabel.ForeColor = Color.Red;
+            errorLabel.Location = new Point(0, 462);
+            errorLabel.Margin = new Padding(4, 0, 4, 0);
+            errorLabel.Name = "errorLabel";
+            errorLabel.Size = new Size(299, 54);
+            errorLabel.TabIndex = 0;
+            errorLabel.Text = "Lỗi:";
+            errorLabel.TextAlign = ContentAlignment.MiddleCenter;
+            errorLabel.Visible = false;
+            // 
+            // todayButton
+            // 
+            todayButton.Cursor = Cursors.Hand;
+            todayButton.Location = new Point(53, 410);
+            todayButton.Margin = new Padding(4, 3, 4, 3);
+            todayButton.Name = "todayButton";
+            todayButton.Size = new Size(182, 35);
+            todayButton.TabIndex = 10;
+            todayButton.Text = "Hôm nay";
+            todayButton.UseVisualStyleBackColor = true;
+            todayButton.Click += TodayButton_Click;
+            // 
+            // nextDateButton
+            // 
+            nextDateButton.Cursor = Cursors.Hand;
+            nextDateButton.Location = new Point(148, 369);
+            nextDateButton.Margin = new Padding(4, 3, 4, 3);
+            nextDateButton.Name = "nextDateButton";
+            nextDateButton.Size = new Size(88, 35);
+            nextDateButton.TabIndex = 9;
+            nextDateButton.Text = "→";
+            toolTip1.SetToolTip(nextDateButton, "Ngày sau");
+            nextDateButton.UseVisualStyleBackColor = true;
+            nextDateButton.Click += NextDateButton_Click;
+            // 
+            // previousDateButton
+            // 
+            previousDateButton.Cursor = Cursors.Hand;
+            previousDateButton.Location = new Point(53, 369);
+            previousDateButton.Margin = new Padding(4, 3, 4, 3);
+            previousDateButton.Name = "previousDateButton";
+            previousDateButton.Size = new Size(88, 35);
+            previousDateButton.TabIndex = 8;
+            previousDateButton.Text = "←";
+            toolTip1.SetToolTip(previousDateButton, "Ngày trước");
+            previousDateButton.UseVisualStyleBackColor = true;
+            previousDateButton.Click += PreviousDateButton_Click;
+            // 
+            // lunarDayComboBox
+            // 
+            lunarDayComboBox.Cursor = Cursors.Hand;
+            lunarDayComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
+            lunarDayComboBox.Enabled = false;
+            lunarDayComboBox.FormattingEnabled = true;
+            lunarDayComboBox.Location = new Point(105, 313);
+            lunarDayComboBox.Margin = new Padding(4, 3, 4, 3);
+            lunarDayComboBox.Name = "lunarDayComboBox";
+            lunarDayComboBox.Size = new Size(116, 28);
+            lunarDayComboBox.Sorted = true;
+            lunarDayComboBox.TabIndex = 7;
+            lunarDayComboBox.SelectedIndexChanged += LunarDayComboBox_SelectedIndexChanged;
+            lunarDayComboBox.KeyPress += KeyPressControl;
+            // 
+            // solarDayComboBox
+            // 
+            solarDayComboBox.Cursor = Cursors.Hand;
+            solarDayComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
+            solarDayComboBox.FormattingEnabled = true;
+            solarDayComboBox.Location = new Point(105, 130);
+            solarDayComboBox.Margin = new Padding(4, 3, 4, 3);
+            solarDayComboBox.Name = "solarDayComboBox";
+            solarDayComboBox.Size = new Size(116, 28);
+            solarDayComboBox.Sorted = true;
+            solarDayComboBox.TabIndex = 3;
+            solarDayComboBox.SelectedIndexChanged += SolarDayComboBox_SelectedIndexChanged;
+            solarDayComboBox.KeyPress += KeyPressControl;
+            // 
+            // lunarYearLabel
+            // 
+            lunarYearLabel.AutoSize = true;
+            lunarYearLabel.Location = new Point(49, 239);
+            lunarYearLabel.Margin = new Padding(4, 0, 4, 0);
+            lunarYearLabel.Name = "lunarYearLabel";
+            lunarYearLabel.Size = new Size(42, 20);
+            lunarYearLabel.TabIndex = 0;
+            lunarYearLabel.Text = "Năm";
+            // 
+            // solarYearLabel
+            // 
+            solarYearLabel.AutoSize = true;
+            solarYearLabel.Location = new Point(49, 57);
+            solarYearLabel.Margin = new Padding(4, 0, 4, 0);
+            solarYearLabel.Name = "solarYearLabel";
+            solarYearLabel.Size = new Size(42, 20);
+            solarYearLabel.TabIndex = 0;
+            solarYearLabel.Text = "Năm";
+            // 
+            // lunarMonthComboBox
+            // 
+            lunarMonthComboBox.Cursor = Cursors.Hand;
+            lunarMonthComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
+            lunarMonthComboBox.Enabled = false;
+            lunarMonthComboBox.FormattingEnabled = true;
+            lunarMonthComboBox.Location = new Point(105, 274);
+            lunarMonthComboBox.Margin = new Padding(4, 3, 4, 3);
+            lunarMonthComboBox.Name = "lunarMonthComboBox";
+            lunarMonthComboBox.Size = new Size(116, 28);
+            lunarMonthComboBox.Sorted = true;
+            lunarMonthComboBox.TabIndex = 6;
+            lunarMonthComboBox.SelectedIndexChanged += LunarMonthComboBox_SelectedIndexChanged;
+            lunarMonthComboBox.KeyPress += KeyPressControl;
+            // 
+            // solarMonthComboBox
+            // 
+            solarMonthComboBox.Cursor = Cursors.Hand;
+            solarMonthComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
+            solarMonthComboBox.FormattingEnabled = true;
+            solarMonthComboBox.Items.AddRange(new object[] { "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12" });
+            solarMonthComboBox.Location = new Point(105, 91);
+            solarMonthComboBox.Margin = new Padding(4, 3, 4, 3);
+            solarMonthComboBox.Name = "solarMonthComboBox";
+            solarMonthComboBox.Size = new Size(116, 28);
+            solarMonthComboBox.Sorted = true;
+            solarMonthComboBox.TabIndex = 2;
+            solarMonthComboBox.SelectedIndexChanged += SolarMonthComboBox_SelectedIndexChanged;
+            solarMonthComboBox.KeyPress += KeyPressControl;
+            // 
+            // lunarMonthLabel
+            // 
+            lunarMonthLabel.AutoSize = true;
+            lunarMonthLabel.Location = new Point(35, 277);
+            lunarMonthLabel.Margin = new Padding(4, 0, 4, 0);
+            lunarMonthLabel.Name = "lunarMonthLabel";
+            lunarMonthLabel.Size = new Size(54, 20);
+            lunarMonthLabel.TabIndex = 0;
+            lunarMonthLabel.Text = "Tháng";
+            // 
+            // solarMonthLabel
+            // 
+            solarMonthLabel.AutoSize = true;
+            solarMonthLabel.Location = new Point(35, 95);
+            solarMonthLabel.Margin = new Padding(4, 0, 4, 0);
+            solarMonthLabel.Name = "solarMonthLabel";
+            solarMonthLabel.Size = new Size(54, 20);
+            solarMonthLabel.TabIndex = 0;
+            solarMonthLabel.Text = "Tháng";
+            // 
+            // lunarDayLabel
+            // 
+            lunarDayLabel.AutoSize = true;
+            lunarDayLabel.Location = new Point(46, 316);
+            lunarDayLabel.Margin = new Padding(4, 0, 4, 0);
+            lunarDayLabel.Name = "lunarDayLabel";
+            lunarDayLabel.Size = new Size(45, 20);
+            lunarDayLabel.TabIndex = 0;
+            lunarDayLabel.Text = "Ngày";
+            // 
+            // solarDayLabel
+            // 
+            solarDayLabel.AutoSize = true;
+            solarDayLabel.Location = new Point(46, 134);
+            solarDayLabel.Margin = new Padding(4, 0, 4, 0);
+            solarDayLabel.Name = "solarDayLabel";
+            solarDayLabel.Size = new Size(45, 20);
+            solarDayLabel.TabIndex = 0;
+            solarDayLabel.Text = "Ngày";
+            // 
+            // lunarYearTextBox
+            // 
+            lunarYearTextBox.Enabled = false;
+            lunarYearTextBox.Location = new Point(105, 236);
+            lunarYearTextBox.Margin = new Padding(4, 3, 4, 3);
+            lunarYearTextBox.MaxLength = 4;
+            lunarYearTextBox.Name = "lunarYearTextBox";
+            lunarYearTextBox.Size = new Size(116, 26);
+            lunarYearTextBox.TabIndex = 5;
+            lunarYearTextBox.Text = "2016";
+            lunarYearTextBox.KeyDown += TextBox_KeyDown;
+            lunarYearTextBox.KeyPress += KeyPressControl;
+            lunarYearTextBox.Validating += LunarYearTextBox_Validating;
+            lunarYearTextBox.Validated += LunarYearTextBox_Validated;
+            // 
+            // solarYearTextBox
+            // 
+            solarYearTextBox.Location = new Point(105, 53);
+            solarYearTextBox.Margin = new Padding(4, 3, 4, 3);
+            solarYearTextBox.MaxLength = 4;
+            solarYearTextBox.Name = "solarYearTextBox";
+            solarYearTextBox.Size = new Size(116, 26);
+            solarYearTextBox.TabIndex = 1;
+            solarYearTextBox.Text = "2016";
+            solarYearTextBox.KeyDown += TextBox_KeyDown;
+            solarYearTextBox.KeyPress += KeyPressControl;
+            solarYearTextBox.Validating += SolarYearTextBox_Validating;
+            solarYearTextBox.Validated += SolarYearTextBox_Validated;
+            // 
+            // lunarCalendarRadioButton
+            // 
+            lunarCalendarRadioButton.AutoSize = true;
+            lunarCalendarRadioButton.Location = new Point(23, 200);
+            lunarCalendarRadioButton.Margin = new Padding(4, 3, 4, 3);
+            lunarCalendarRadioButton.Name = "lunarCalendarRadioButton";
+            lunarCalendarRadioButton.Size = new Size(78, 24);
+            lunarCalendarRadioButton.TabIndex = 4;
+            lunarCalendarRadioButton.TabStop = true;
+            lunarCalendarRadioButton.Text = "Âm lịch";
+            lunarCalendarRadioButton.UseVisualStyleBackColor = true;
+            lunarCalendarRadioButton.CheckedChanged += DayCalendarRadioButton_CheckedChanged;
+            // 
+            // solarCalendarRadioButton
+            // 
+            solarCalendarRadioButton.AutoSize = true;
+            solarCalendarRadioButton.Checked = true;
+            solarCalendarRadioButton.Location = new Point(23, 17);
+            solarCalendarRadioButton.Margin = new Padding(4, 3, 4, 3);
+            solarCalendarRadioButton.Name = "solarCalendarRadioButton";
+            solarCalendarRadioButton.Size = new Size(102, 24);
+            solarCalendarRadioButton.TabIndex = 0;
+            solarCalendarRadioButton.TabStop = true;
+            solarCalendarRadioButton.Text = "Dương lịch";
+            solarCalendarRadioButton.UseVisualStyleBackColor = true;
+            solarCalendarRadioButton.CheckedChanged += DayCalendarRadioButton_CheckedChanged;
+            // 
+            // monthCalendarTabPage
+            // 
+            monthCalendarTabPage.Controls.Add(tableLayoutPanel2);
+            monthCalendarTabPage.Location = new Point(4, 29);
+            monthCalendarTabPage.Margin = new Padding(4, 3, 4, 3);
+            monthCalendarTabPage.Name = "monthCalendarTabPage";
+            monthCalendarTabPage.Padding = new Padding(4, 3, 4, 3);
+            monthCalendarTabPage.Size = new Size(776, 528);
+            monthCalendarTabPage.TabIndex = 1;
+            monthCalendarTabPage.Text = "Lịch tháng";
+            monthCalendarTabPage.UseVisualStyleBackColor = true;
+            // 
+            // tableLayoutPanel2
+            // 
+            tableLayoutPanel2.ColumnCount = 1;
+            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            tableLayoutPanel2.Controls.Add(lunarMonthCalendar, 0, 1);
+            tableLayoutPanel2.Controls.Add(monthCalendarControlPanel, 0, 0);
+            tableLayoutPanel2.Dock = DockStyle.Fill;
+            tableLayoutPanel2.Location = new Point(4, 3);
+            tableLayoutPanel2.Name = "tableLayoutPanel2";
+            tableLayoutPanel2.RowCount = 2;
+            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Absolute, 90F));
+            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            tableLayoutPanel2.Size = new Size(768, 522);
+            tableLayoutPanel2.TabIndex = 2;
+            // 
+            // lunarMonthCalendar
+            // 
+            lunarMonthCalendar.BackgroundImage = (Image)resources.GetObject("lunarMonthCalendar.BackgroundImage");
+            lunarMonthCalendar.BackgroundImageLayout = ImageLayout.Stretch;
+            lunarMonthCalendar.Dock = DockStyle.Fill;
+            lunarMonthCalendar.Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
+            lunarMonthCalendar.Location = new Point(5, 96);
+            lunarMonthCalendar.Margin = new Padding(5, 6, 5, 6);
+            lunarMonthCalendar.Name = "lunarMonthCalendar";
+            lunarMonthCalendar.SelectedMonth = new DateTime(2016, 5, 15, 0, 0, 0, 0);
+            lunarMonthCalendar.Size = new Size(758, 420);
+            lunarMonthCalendar.TabIndex = 1;
+            lunarMonthCalendar.SelectedMonthChanged += LunarMonthCalendar_SelectedMonthChanged;
+            // 
+            // monthCalendarControlPanel
+            // 
+            monthCalendarControlPanel.Controls.Add(yearTextBox);
+            monthCalendarControlPanel.Controls.Add(yearLabel);
+            monthCalendarControlPanel.Controls.Add(thisMonthButton);
+            monthCalendarControlPanel.Controls.Add(monthComboBox);
+            monthCalendarControlPanel.Controls.Add(nextMonthButton);
+            monthCalendarControlPanel.Controls.Add(previousMonthButton);
+            monthCalendarControlPanel.Controls.Add(monthLabel);
+            monthCalendarControlPanel.Location = new Point(4, 3);
+            monthCalendarControlPanel.Margin = new Padding(4, 3, 4, 3);
+            monthCalendarControlPanel.Name = "monthCalendarControlPanel";
+            monthCalendarControlPanel.Size = new Size(760, 81);
+            monthCalendarControlPanel.TabIndex = 0;
+            // 
+            // yearTextBox
+            // 
+            yearTextBox.Location = new Point(83, 7);
+            yearTextBox.Margin = new Padding(4, 3, 4, 3);
+            yearTextBox.MaxLength = 4;
+            yearTextBox.Name = "yearTextBox";
+            yearTextBox.Size = new Size(116, 26);
+            yearTextBox.TabIndex = 0;
+            yearTextBox.Text = "2016";
+            yearTextBox.KeyDown += YearTextBox_KeyDown;
+            yearTextBox.KeyPress += KeyPressControl;
+            yearTextBox.Validating += YearTextBox_Validating;
+            yearTextBox.Validated += YearTextBox_Validated;
+            // 
+            // yearLabel
+            // 
+            yearLabel.AutoSize = true;
+            yearLabel.Location = new Point(27, 10);
+            yearLabel.Margin = new Padding(4, 0, 4, 0);
+            yearLabel.Name = "yearLabel";
+            yearLabel.Size = new Size(42, 20);
+            yearLabel.TabIndex = 0;
+            yearLabel.Text = "Năm";
+            // 
+            // thisMonthButton
+            // 
+            thisMonthButton.Cursor = Cursors.Hand;
+            thisMonthButton.Location = new Point(536, 43);
+            thisMonthButton.Margin = new Padding(4, 3, 4, 3);
+            thisMonthButton.Name = "thisMonthButton";
+            thisMonthButton.Size = new Size(182, 35);
+            thisMonthButton.TabIndex = 4;
+            thisMonthButton.Text = "Hôm nay";
+            thisMonthButton.UseVisualStyleBackColor = true;
+            thisMonthButton.Click += ThisMonthButton_Click;
+            // 
+            // monthComboBox
+            // 
+            monthComboBox.Cursor = Cursors.Hand;
+            monthComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
+            monthComboBox.FormattingEnabled = true;
+            monthComboBox.Items.AddRange(new object[] { "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12" });
+            monthComboBox.Location = new Point(83, 40);
+            monthComboBox.Margin = new Padding(4, 3, 4, 3);
+            monthComboBox.Name = "monthComboBox";
+            monthComboBox.Size = new Size(116, 28);
+            monthComboBox.Sorted = true;
+            monthComboBox.TabIndex = 1;
+            monthComboBox.SelectedIndexChanged += MonthComboBox_SelectedIndexChanged;
+            // 
+            // nextMonthButton
+            // 
+            nextMonthButton.Cursor = Cursors.Hand;
+            nextMonthButton.Location = new Point(630, 5);
+            nextMonthButton.Margin = new Padding(4, 3, 4, 3);
+            nextMonthButton.Name = "nextMonthButton";
+            nextMonthButton.Size = new Size(88, 35);
+            nextMonthButton.TabIndex = 3;
+            nextMonthButton.Text = "→";
+            toolTip1.SetToolTip(nextMonthButton, "Tháng sau");
+            nextMonthButton.UseVisualStyleBackColor = true;
+            nextMonthButton.Click += NextMonthButton_Click;
+            // 
+            // previousMonthButton
+            // 
+            previousMonthButton.Cursor = Cursors.Hand;
+            previousMonthButton.Location = new Point(536, 5);
+            previousMonthButton.Margin = new Padding(4, 3, 4, 3);
+            previousMonthButton.Name = "previousMonthButton";
+            previousMonthButton.Size = new Size(88, 35);
+            previousMonthButton.TabIndex = 2;
+            previousMonthButton.Text = "←";
+            toolTip1.SetToolTip(previousMonthButton, "Tháng trước");
+            previousMonthButton.UseVisualStyleBackColor = true;
+            previousMonthButton.Click += PreviousMonthButton_Click;
+            // 
+            // monthLabel
+            // 
+            monthLabel.AutoSize = true;
+            monthLabel.Location = new Point(13, 44);
+            monthLabel.Margin = new Padding(4, 0, 4, 0);
+            monthLabel.Name = "monthLabel";
+            monthLabel.Size = new Size(54, 20);
+            monthLabel.TabIndex = 0;
+            monthLabel.Text = "Tháng";
             // 
             // Main
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(634, 551);
-            this.Controls.Add(this.tabControlMain);
-            this.DoubleBuffered = true;
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MaximizeBox = false;
-            this.Name = "Main";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Âm dương lịch";
-            this.tabControlMain.ResumeLayout(false);
-            this.tabDayCalendar.ResumeLayout(false);
-            this.pnlDayCalendar_Control.ResumeLayout(false);
-            this.pnlDayCalendar_Control.PerformLayout();
-            this.tabMonthCalendar.ResumeLayout(false);
-            this.pnlLunarMonthCalendar_Control.ResumeLayout(false);
-            this.pnlLunarMonthCalendar_Control.PerformLayout();
-            this.ResumeLayout(false);
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(784, 561);
+            Controls.Add(mainTabControl);
+            DoubleBuffered = true;
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            Icon = (Icon)resources.GetObject("$this.Icon");
+            Margin = new Padding(4, 3, 4, 3);
+            MaximizeBox = false;
+            Name = "Main";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Âm dương lịch";
+            mainTabControl.ResumeLayout(false);
+            dayCalendarTabPage.ResumeLayout(false);
+            dayCalendarTableLayoutPanel.ResumeLayout(false);
+            dayCalendarControlPanel.ResumeLayout(false);
+            dayCalendarControlPanel.PerformLayout();
+            monthCalendarTabPage.ResumeLayout(false);
+            tableLayoutPanel2.ResumeLayout(false);
+            monthCalendarControlPanel.ResumeLayout(false);
+            monthCalendarControlPanel.PerformLayout();
+            ResumeLayout(false);
         }
 
         #endregion
 
-        private System.Windows.Forms.TabControl tabControlMain;
-        private System.Windows.Forms.TabPage tabMonthCalendar;
-        private System.Windows.Forms.TabPage tabDayCalendar;
-        private LunarDayCalendar cldLunarDayCalendar;
-        private System.Windows.Forms.Panel pnlDayCalendar_Control;
-        private System.Windows.Forms.ComboBox cmbDayCalendar_Solar_Day;
-        private System.Windows.Forms.Label lblDayCalendar_Solar_Year;
-        private System.Windows.Forms.ComboBox cmbDayCalendar_Solar_Month;
-        private System.Windows.Forms.Label lblDayCalendar_Solar_Month;
-        private System.Windows.Forms.Label lblLunarDayCalendar_Solar_Day;
-        private System.Windows.Forms.TextBox txtDayCalendar_Solar_Year;
-        private System.Windows.Forms.RadioButton rdbDayCalendar_Solar;
-        private System.Windows.Forms.Button btnDayCalendar_Today;
-        private System.Windows.Forms.Button btnDayCalendar_NextDate;
-        private System.Windows.Forms.Button btnDayCalendar_PreviousDate;
-        private System.Windows.Forms.ComboBox cmbDayCalendar_Lunar_Day;
-        private System.Windows.Forms.Label lblDayCalendar_Lunar_Year;
-        private System.Windows.Forms.ComboBox cmbDayCalendar_Lunar_Month;
-        private System.Windows.Forms.Label lblDayCalendar_Lunar_Month;
-        private System.Windows.Forms.Label lblDayCalendar_Lunar_Day;
-        private System.Windows.Forms.TextBox txtDayCalendar_Lunar_Year;
-        private System.Windows.Forms.RadioButton rdbDayCalendar_Lunar;
-        private System.Windows.Forms.Button btnMonthCalendar_Today;
-        private System.Windows.Forms.Button btnMonthCalendar_NextMonth;
-        private System.Windows.Forms.Button btnMonthCalendar_PreviousMonth;
-        private System.Windows.Forms.Label lblMonthCalendar_Year;
-        private System.Windows.Forms.ComboBox cmbMonthCalendar_Month;
-        private System.Windows.Forms.Label lblMonthCalendar_Month;
-        private System.Windows.Forms.TextBox txtMonthCalendar_Year;
-        private System.Windows.Forms.Panel pnlLunarMonthCalendar_Control;
-        private LunarMonthCalendar cldLunarMonthCalendar;
-        private System.Windows.Forms.Label lblDayCalendar_Error;
-        private System.Windows.Forms.ToolTip toolTip1;
+        private TabControl mainTabControl;
+        private TabPage monthCalendarTabPage;
+        private TabPage dayCalendarTabPage;
+        private LunarDayCalendar lunarDayCalendar;
+        private Panel dayCalendarControlPanel;
+        private ComboBox solarDayComboBox;
+        private Label solarYearLabel;
+        private ComboBox solarMonthComboBox;
+        private Label solarMonthLabel;
+        private Label solarDayLabel;
+        private TextBox solarYearTextBox;
+        private RadioButton solarCalendarRadioButton;
+        private Button todayButton;
+        private Button nextDateButton;
+        private Button previousDateButton;
+        private ComboBox lunarDayComboBox;
+        private Label lunarYearLabel;
+        private ComboBox lunarMonthComboBox;
+        private Label lunarMonthLabel;
+        private Label lunarDayLabel;
+        private TextBox lunarYearTextBox;
+        private RadioButton lunarCalendarRadioButton;
+        private Button thisMonthButton;
+        private Button nextMonthButton;
+        private Button previousMonthButton;
+        private Label yearLabel;
+        private ComboBox monthComboBox;
+        private Label monthLabel;
+        private TextBox yearTextBox;
+        private Panel monthCalendarControlPanel;
+        private LunarMonthCalendar lunarMonthCalendar;
+        private Label errorLabel;
+        private ToolTip toolTip1;
+        private TableLayoutPanel dayCalendarTableLayoutPanel;
+        private TableLayoutPanel tableLayoutPanel2;
     }
 }
 

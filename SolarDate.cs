@@ -1,18 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace LunarCalendar
+﻿namespace LunarCalendar
 {
     public class SolarDate
     {
         #region Fields
-        private int day;
-        private int month;
-        private int year;
-        private long julianDayNumber;
+        private readonly int day;
+        private readonly int month;
+        private readonly int year;
+        private readonly long julianDayNumber;
         #endregion
 
         #region Properties
@@ -24,17 +18,17 @@ namespace LunarCalendar
         {
             get
             {
-                DateTime date = new DateTime(year, month, day);
-                switch (date.DayOfWeek)
+                DateTime date = new(year, month, day);
+                return date.DayOfWeek switch
                 {
-                    case System.DayOfWeek.Monday : return "Thứ hai";
-                    case System.DayOfWeek.Tuesday: return "Thứ ba";
-                    case System.DayOfWeek.Wednesday: return "Thứ tư";
-                    case System.DayOfWeek.Thursday: return "Thứ năm";
-                    case System.DayOfWeek.Friday: return "Thứ sáu";
-                    case System.DayOfWeek.Saturday: return "Thứ bảy";
-                    default: return "Chủ nhật";
-                }
+                    System.DayOfWeek.Monday => "Thứ hai",
+                    System.DayOfWeek.Tuesday => "Thứ ba",
+                    System.DayOfWeek.Wednesday => "Thứ tư",
+                    System.DayOfWeek.Thursday => "Thứ năm",
+                    System.DayOfWeek.Friday => "Thứ sáu",
+                    System.DayOfWeek.Saturday => "Thứ bảy",
+                    _ => "Chủ nhật",
+                };
             }
         }
         public int Month
@@ -45,21 +39,21 @@ namespace LunarCalendar
         {
             get
             {
-                switch (month)
+                return month switch
                 {
-                    case 1: return "Tháng một";
-                    case 2: return "Tháng hai";
-                    case 3: return "Tháng ba";
-                    case 4: return "Tháng tư";
-                    case 5: return "Tháng năm";
-                    case 6: return "Tháng sáu";
-                    case 7: return "Tháng bảy";
-                    case 8: return "Tháng tám";
-                    case 9: return "Tháng chín";
-                    case 10: return "Tháng mười";
-                    case 11: return "Tháng mười một";
-                    default: return "Tháng mười hai";
-                }
+                    1 => "Tháng một",
+                    2 => "Tháng hai",
+                    3 => "Tháng ba",
+                    4 => "Tháng tư",
+                    5 => "Tháng năm",
+                    6 => "Tháng sáu",
+                    7 => "Tháng bảy",
+                    8 => "Tháng tám",
+                    9 => "Tháng chín",
+                    10 => "Tháng mười",
+                    11 => "Tháng mười một",
+                    _ => "Tháng mười hai",
+                };
             }
         }
         public int Year
@@ -94,9 +88,9 @@ namespace LunarCalendar
                 return false;
         }
 
-        public override bool Equals(object obj)
+        public override bool Equals(object? obj)
         {
-            if (obj.GetType() != typeof(SolarDate))
+            if (obj == null || obj.GetType() != typeof(SolarDate))
                 return false;
 
             SolarDate solarDate = (SolarDate)obj;
@@ -141,9 +135,9 @@ namespace LunarCalendar
         public SolarDate(long JulianDayNumber)
         {
             julianDayNumber = JulianDayNumber;
-            long a = 0;
-            long b = 0;
-            long c = 0;
+            long a;
+            long b;
+            long c;
             if (JulianDayNumber > 2299160)
             {
                 a = JulianDayNumber + 32044;
@@ -177,7 +171,7 @@ namespace LunarCalendar
 
         public static int GetNumberOfDaysInMonth(int month, int year)
         {
-            int numberOfDaysInMonth = 0;
+            int numberOfDaysInMonth;
             switch (month)
             {
                 case 1:

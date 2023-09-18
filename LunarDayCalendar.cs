@@ -1,11 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Windows.Forms;
+﻿using System.ComponentModel;
+using System.Reflection;
 
 namespace LunarCalendar
 {
@@ -26,7 +20,7 @@ namespace LunarCalendar
         Category("Behavior"),
         Browsable(true),
         DefaultValue(typeof(LunarCalendarType), "Vietnamese")]
-        public LunarCalendarType CalendarType 
+        public LunarCalendarType CalendarType
         {
             get { return calendarType; }
             set
@@ -45,7 +39,7 @@ namespace LunarCalendar
                 Invalidate();
             }
         }
-        
+
         [Description("Solar date"),
         Category("Behavior"),
         Browsable(true)]
@@ -59,20 +53,20 @@ namespace LunarCalendar
 
                 selectedDate = value;
 
-                SolarDate solarDate = new SolarDate(selectedDate.Day, selectedDate.Month, selectedDate.Year);
-                lblSolar_Day.Text = solarDate.Day.ToString();
-                lblSolar_MonthName.Text = solarDate.MonthName;
-                lblSolar_Year.Text = solarDate.Year.ToString();
-                lblSolar_DayOfWeek.Text = solarDate.DayOfWeek;
+                SolarDate solarDate = new(selectedDate.Day, selectedDate.Month, selectedDate.Year);
+                solarDayLabel.Text = solarDate.Day.ToString();
+                solarMonthNameLabel.Text = solarDate.MonthName;
+                solarYearLabel.Text = solarDate.Year.ToString();
+                solarDayOfWeekLabel.Text = solarDate.DayOfWeek;
 
                 LunarDate lunarDate = solarDate.ToLunarDate(timeZone);
-                lblLunar_Day.Text = lunarDate.Day.ToString();
-                lblLunar_Month.Text = lunarDate.Month.ToString();
-                lblLunar_Year.Text = lunarDate.Year.ToString();
-                lblLunar_DayName.Text = lunarDate.DayName;
-                lblLunar_MonthName.Text = lunarDate.MonthName;
-                lblLunar_YearName.Text = lunarDate.YearName;
-                lblLunar_LeapMonth.Visible = lunarDate.IsLeapMonth;
+                lunarDayLabel.Text = lunarDate.Day.ToString();
+                lunarMonthLabel.Text = lunarDate.Month.ToString();
+                lunarYearLabel.Text = lunarDate.Year.ToString();
+                lunarDayNameLabel.Text = lunarDate.DayName;
+                lunarMonthNameLabel.Text = lunarDate.MonthName;
+                lunarYearNameLabel.Text = lunarDate.YearName;
+                lunarLeapMonthLabel.Visible = lunarDate.IsLeapMonth;
 
                 Invalidate();
 
@@ -87,12 +81,11 @@ namespace LunarCalendar
         [Description("Occur when the selected date is changed"),
         Category("Behavior"),
         Browsable(true)]
-        public event SelectedDateChangedEventHandler SelectedDateChanged;
+        public event SelectedDateChangedEventHandler? SelectedDateChanged;
 
         protected virtual void OnSelectedDateChanged(EventArgs e)
         {
-            if (SelectedDateChanged != null)
-                SelectedDateChanged(this, e);
+            SelectedDateChanged?.Invoke(this, e);
         }
         #endregion
 
@@ -100,6 +93,11 @@ namespace LunarCalendar
         public LunarDayCalendar()
         {
             InitializeComponent();
+
+            // Enable double buffering
+            typeof(Panel).InvokeMember("DoubleBuffered",
+                BindingFlags.SetProperty | BindingFlags.Instance | BindingFlags.NonPublic,
+                null, panel, new object[] { true });
 
             selectedDate = DateTime.Today;
         }
