@@ -1,10 +1,13 @@
 ﻿Lunar Calendar
 =====
 
-### *Tác giả:* Dat Nguyen
+### *Tác giả:* Đạt Nguyễn
 
 ### Giới thiệu
-Đây là phần mềm dùng để chuyển đổi giữa ngày âm lịch và ngày dương lịch, bao gồm lịch ngày và lịch tháng. Phần mềm có cấu trúc đơn giản, có thể mở rộng để đáp ứng nhiều nhu cầu khác nhau.
+Đây là phần mềm dùng để chuyển đổi giữa ngày âm lịch và ngày dương lịch theo lịch Việt Nam, bao gồm lịch ngày và lịch tháng.
 
 ![Main window](/Images/MainWindow.png)
+
+Tải về tại [trang release](https://github.com/phatdatnguyen/LunarCalendar/releases/).
+
 
